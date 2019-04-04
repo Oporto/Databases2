@@ -13,8 +13,8 @@ import java.util.LinkedList;
  */
 class AdvBufferMgr {
    private Map<Integer, Buffer> bufferpool;
-   private Map<Buffer, Integer> reversedPool;
-   private Map<Block, Integer> blockLocations;
+	private Map<Buffer, Integer> reversedPool;
+	private Map<Block, Integer> blockLocations;
    private LinkedList<Integer> emptyBuffers;
    private int numAvailable;
 
@@ -77,6 +77,7 @@ class AdvBufferMgr {
          int i = reversedPool.get(buff);
          blockLocations.put(blk, i);
          buff.assignToBlock(blk);
+         buff.setTime(System.currentTimeMillis());
       }
       if (!buff.isPinned())
          numAvailable--;
@@ -97,9 +98,12 @@ class AdvBufferMgr {
       Buffer buff = chooseUnpinnedBuffer();
       if (buff == null)
          return null;
+      
       Block blk = buff.assignToNew(filename, fmtr);
       int i = reversedPool.get(buff);
       blockLocations.put(blk, i);
+      buff.setTime(System.currentTimeMillis());
+      
       numAvailable--;
       buff.pin();
       return buff;
@@ -125,25 +129,46 @@ class AdvBufferMgr {
    }
    
    private Buffer findExistingBuffer(Block blk) {
-      return bufferpool.get(blockLocations.get(blk));
+   	//i think we need an if here to deal with if the blk isn't in buff pool
+	   if (blockLocations.containsKey(blk)) {
+		   return bufferpool.get(blockLocations.get(blk));
+	   }
+	   return null;
    }
    
    private Buffer findEmptyBuffer() {
       if (emptyBuffers.isEmpty())
-         return null;
+   	    return null;
       else
          return bufferpool.get(emptyBuffers.pop());
+	   }
+	   
+   private Buffer LRUFinder(){
+   	    long lruTimes = bufferpool.get(0).getTime();
+   	    Buffer lruBuffer = bufferpool.get(0);
+	
+	   for (int i = 0; i < bufferpool.size(); i++)
+	   {
+		   Buffer buff = bufferpool.get(i);
+		   //checking for least time but also have to check for ones that aren't pinned
+		   if (buff.getTime() < lruTimes && !buff.isPinned())
+		   {
+			   lruTimes = buff.getTime();
+			   lruBuffer = buff;
+		   }
+	   }
+	   return lruBuffer;
    }
 
    private Buffer chooseUnpinnedBuffer() {
       Buffer buff = findEmptyBuffer();
-      if (buff != null)
-         return buff;
-      for (int i = 0; i < bufferpool.size(); i++) {
-         buff = bufferpool.get(i);
-         if (!buff.isPinned())
-            return buff;
+      if (buff != null){
+	      return buff;
       }
-      return null;
+      //add lru here and return the lru buffer, have to remove from maps also?
+	   Buffer LRUChoice = LRUFinder();
+	   //line to clear the block, decided we don't need but i'll leave it here in case
+	   //blockLocations.remove(LRUChoice.block());
+	   return LRUChoice;
    }
 }

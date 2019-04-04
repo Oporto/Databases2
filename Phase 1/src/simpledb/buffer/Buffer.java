@@ -19,6 +19,7 @@ public class Buffer {
    private int pins = 0;
    private int modifiedBy = -1;  // negative means not modified
    private int logSequenceNumber = -1; // negative means no corresponding log record
+	private long time = -1;
 
    /**
     * Creates a new buffer, wrapping a new 
@@ -188,4 +189,13 @@ public class Buffer {
       pins = 0;
       return blk;
    }
+   
+   //made getter and setter for new time variable to be used with LRU
+	public long getTime(){
+   	    return time;
+	}
+	
+	public void setTime(long time){
+   	    this.time = time;
+	}
 }

@@ -116,4 +116,13 @@ class BasicBufferMgr {
          return buff;
       return null;
    }
+
+   @Override
+   public String toString(){
+      String str = "Advanced Buffer Manager: \n";
+      for (int i = 0; i < bufferpool.length; i++){
+         str += "Buffer #" + i + ": " + bufferpool[i].toString();
+      }
+      return str;
+   }
 }

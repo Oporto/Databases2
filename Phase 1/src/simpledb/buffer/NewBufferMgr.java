@@ -1,6 +1,7 @@
 package simpledb.buffer;
 
-import simpledb.file.*;
+import simpledb.file.Block;
+import simpledb.file.FileMgr;
 
 /**
  * The publicly-accessible buffer manager.
@@ -18,25 +19,25 @@ import simpledb.file.*;
  * then a {@link BufferAbortException} is thrown.
  * @author Edward Sciore
  */
-public class BufferMgr {
+public class NewBufferMgr {
    private static final long MAX_TIME = 10000; // 10 seconds
-   private BasicBufferMgr bufferMgr;
-   
+   private AdvBufferMgr bufferMgr;
+
    /**
-    * Creates a new buffer manager having the specified 
+    * Creates a new buffer manager having the specified
     * number of buffers.
     * This constructor depends on both the {@link FileMgr} and
-    * {@link simpledb.log.LogMgr LogMgr} objects 
+    * {@link simpledb.log.LogMgr LogMgr} objects
     * that it gets from the class
     * {@link simpledb.server.SimpleDB}.
     * Those objects are created during system initialization.
-    * Thus this constructor cannot be called until 
+    * Thus this constructor cannot be called until
     * {@link simpledb.server.SimpleDB#initFileAndLogMgr(String)} or
     * is called first.
     * @param numbuffers the number of buffer slots to allocate
     */
-   public BufferMgr(int numbuffers) {
-      bufferMgr = new BasicBufferMgr(numbuffers);
+   public NewBufferMgr(int numbuffers) {
+      bufferMgr = new AdvBufferMgr(numbuffers);
    }
    
    /**

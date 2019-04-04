@@ -169,7 +169,7 @@ public class Buffer {
    void assignToBlock(Block b) {
       flush();
       blk = b;
-      contents.read(blk);
+      //contents.read(blk);
       pins = 0;
    }
 
@@ -191,6 +191,8 @@ public class Buffer {
 
    @Override
    public String toString(){
-      return "Block in buffer: " + blk.toString() + ", pinned: " + pins;
+      return "Block in buffer: ";// + blk.toString() + ", pinned: " + pins + ", log reference: " + logSequenceNumber;
    }
+
+
 }

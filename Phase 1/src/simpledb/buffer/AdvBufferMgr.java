@@ -3,6 +3,7 @@ package simpledb.buffer;
 import simpledb.file.Block;
 import simpledb.file.FileMgr;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.LinkedList;
 
 /**
@@ -11,8 +12,9 @@ import java.util.LinkedList;
  *
  */
 class AdvBufferMgr {
-   private HashMap<Integer, Buffer> bufferpool;
-   private HashMap<Buffer, Integer> reversedPool;
+   private Map<Integer, Buffer> bufferpool;
+   private Map<Buffer, Integer> reversedPool;
+   private Map<Block, Integer> blockLocations;
    private LinkedList<Integer> emptyBuffers;
    private int numAvailable;
 
@@ -32,6 +34,7 @@ class AdvBufferMgr {
    AdvBufferMgr(int numbuffs) {
       bufferpool = new HashMap<Integer, Buffer>();
       reversedPool = new HashMap<Buffer, Integer>();
+      blockLocations = new HashMap<Block, Integer>();
       emptyBuffers = new LinkedList<Integer>();
       numAvailable = numbuffs;
       Buffer buffer;
@@ -71,6 +74,8 @@ class AdvBufferMgr {
          buff = chooseUnpinnedBuffer();
          if (buff == null)
             return null;
+         int i = reversedPool.get(buff);
+         blockLocations.put(blk, i);
          buff.assignToBlock(blk);
       }
       if (!buff.isPinned())
@@ -92,7 +97,9 @@ class AdvBufferMgr {
       Buffer buff = chooseUnpinnedBuffer();
       if (buff == null)
          return null;
-      buff.assignToNew(filename, fmtr);
+      Block blk = buff.assignToNew(filename, fmtr);
+      int i = reversedPool.get(buff);
+      blockLocations.put(blk, i);
       numAvailable--;
       buff.pin();
       return buff;
@@ -105,7 +112,6 @@ class AdvBufferMgr {
    synchronized void unpin(Buffer buff) {
       buff.unpin();
       int i = reversedPool.get(buff);
-      emptyBuffers.add(i);
       if (!buff.isPinned())
          numAvailable++;
    }
@@ -119,20 +125,25 @@ class AdvBufferMgr {
    }
    
    private Buffer findExistingBuffer(Block blk) {
-      Buffer buff;
-      for (int i = 0; i < bufferpool.size(); i++) {
-         buff = bufferpool.get(i);
-         Block b = buff.block();
-         if (b != null && b.equals(blk))
-            return buff;
-      }
-      return null;
+      return bufferpool.get(blockLocations.get(blk));
    }
    
-   private Buffer chooseUnpinnedBuffer() {
+   private Buffer findEmptyBuffer() {
       if (emptyBuffers.isEmpty())
          return null;
       else
          return bufferpool.get(emptyBuffers.pop());
+   }
+
+   private Buffer chooseUnpinnedBuffer() {
+      Buffer buff = findEmptyBuffer();
+      if (buff != null)
+         return buff;
+      for (int i = 0; i < bufferpool.size(); i++) {
+         buff = bufferpool.get(i);
+         if (!buff.isPinned())
+            return buff;
+      }
+      return null;
    }
 }

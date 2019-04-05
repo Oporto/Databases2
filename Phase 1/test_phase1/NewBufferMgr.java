@@ -1,5 +1,3 @@
-package simpledb.buffer;
-
 import simpledb.file.Block;
 import simpledb.file.FileMgr;
 

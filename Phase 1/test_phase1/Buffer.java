@@ -1,7 +1,6 @@
-package simpledb.buffer;
-
+import simpledb.file.Block;
+import simpledb.file.Page;
 import simpledb.server.SimpleDB;
-import simpledb.file.*;
 
 /**
  * An individual buffer.
@@ -23,16 +22,16 @@ public class Buffer {
 
    /**
     * Creates a new buffer, wrapping a new 
-    * {@link simpledb.file.Page page}.  
-    * This constructor is called exclusively by the 
-    * class {@link BasicBufferMgr}.   
-    * It depends on  the 
-    * {@link simpledb.log.LogMgr LogMgr} object 
+    * {@link Page page}.
+    * This constructor is called exclusively by the
+    * class {@link BasicBufferMgr}.
+    * It depends on  the
+    * {@link simpledb.log.LogMgr LogMgr} object
     * that it gets from the class
-    * {@link simpledb.server.SimpleDB}.
+    * {@link SimpleDB}.
     * That object is created during system initialization.
-    * Thus this constructor cannot be called until 
-    * {@link simpledb.server.SimpleDB#initFileAndLogMgr(String)} or
+    * Thus this constructor cannot be called until
+    * {@link SimpleDB#initFileAndLogMgr(String)} or
     * is called first.
     */
    public Buffer() {}
@@ -122,7 +121,7 @@ public class Buffer {
    void flush() {
       if (modifiedBy >= 0) {
          SimpleDB.logMgr().flush(logSequenceNumber);
-         contents.write(blk);
+         //contents.write(blk);
          modifiedBy = -1;
       }
    }
@@ -170,7 +169,7 @@ public class Buffer {
    void assignToBlock(Block b) {
       flush();
       blk = b;
-      contents.read(blk);
+      //contents.read(blk);
       pins = 0;
    }
 

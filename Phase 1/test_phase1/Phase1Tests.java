@@ -1,5 +1,4 @@
 import org.junit.Test;
-import simpledb.buffer.*;
 import simpledb.file.*;
 
 import static junit.framework.TestCase.*;
@@ -9,8 +8,8 @@ public class Phase1Tests {
     public void testTask1(){
         int size;
         long bef;
-        long delta1 = 0;
-        long delta2 = 0;
+        long delta1;
+        long delta2;
         System.out.println("Basic test:");
         for (int i = 10; i < 15; i++){
             size = 2 << i;
@@ -42,9 +41,9 @@ public class Phase1Tests {
     public void testTask2(){
         int size;
         long bef;
-        long delta1 = 0;
-        long delta2 = 0;
-        int step = 0;
+        long delta1;
+        long delta2;
+        int step;
         System.out.println("Basic test:");
         for (int i = 10; i < 15; i++){
             size = 2 << i;
@@ -82,5 +81,20 @@ public class Phase1Tests {
         }
 
         assertTrue(true);
+    }
+    @Test
+    public synchronized void testTask3() throws InterruptedException{
+        NewBufferMgr bufferMgr = new NewBufferMgr(3);
+        Buffer buff1 = bufferMgr.pin(new Block("FakeFile", 1));
+        Buffer buff2 = bufferMgr.pin(new Block("FakeFile", 2));
+        Buffer buff3 = bufferMgr.pin(new Block("FakeFile", 3));
+        bufferMgr.unpin(buff2);
+        wait(10^9);
+        bufferMgr.unpin(buff3);
+        wait(10^9);
+        bufferMgr.unpin(buff1);
+        wait(10^9);
+        bufferMgr.pin(new Block("FakeFile", 4));
+        System.out.println(bufferMgr.toString());
     }
 }

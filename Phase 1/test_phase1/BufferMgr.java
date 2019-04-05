@@ -1,10 +1,9 @@
-package simpledb.buffer;
-
-import simpledb.file.*;
+import simpledb.file.Block;
+import simpledb.file.FileMgr;
 
 /**
  * The publicly-accessible buffer manager.
- * A buffer manager wraps an advanced buffer manager, and
+ * A buffer manager wraps a basic buffer manager, and
  * provides the same methods. The difference is that
  * the methods {@link #pin(Block) pin} and 
  * {@link #pinNew(String, PageFormatter) pinNew}
@@ -20,23 +19,23 @@ import simpledb.file.*;
  */
 public class BufferMgr {
    private static final long MAX_TIME = 10000; // 10 seconds
-   private AdvBufferMgr bufferMgr;
-   
+   private BasicBufferMgr bufferMgr;
+
    /**
-    * Creates a new buffer manager having the specified 
+    * Creates a new buffer manager having the specified
     * number of buffers.
     * This constructor depends on both the {@link FileMgr} and
-    * {@link simpledb.log.LogMgr LogMgr} objects 
+    * {@link simpledb.log.LogMgr LogMgr} objects
     * that it gets from the class
     * {@link simpledb.server.SimpleDB}.
     * Those objects are created during system initialization.
-    * Thus this constructor cannot be called until 
+    * Thus this constructor cannot be called until
     * {@link simpledb.server.SimpleDB#initFileAndLogMgr(String)} or
     * is called first.
     * @param numbuffers the number of buffer slots to allocate
     */
    public BufferMgr(int numbuffers) {
-      bufferMgr = new AdvBufferMgr(numbuffers);
+      bufferMgr = new BasicBufferMgr(numbuffers);
    }
    
    /**

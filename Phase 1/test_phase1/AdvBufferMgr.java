@@ -1,17 +1,16 @@
-package simpledb.buffer;
-
 import simpledb.file.Block;
 import simpledb.file.FileMgr;
+
 import java.util.HashMap;
-import java.util.Map;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Manages the pinning and unpinning of buffers to blocks.
  * @author Edward Sciore
  *
  */
-class AdvBufferMgr {
+public class AdvBufferMgr {
    //hash map to hold the buffer pool
    private Map<Integer, Buffer> bufferpool;
    //reversed hashmap of buffer pool for ease of use

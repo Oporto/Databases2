@@ -171,4 +171,13 @@ class AdvBufferMgr {
 	   //blockLocations.remove(LRUChoice.block());
 	   return LRUChoice;
    }
+
+   @Override
+   public String toString(){
+      String str = "Advanced Buffer Manager: \n";
+      for (int i = 0; i < bufferpool.size(); i++){
+         str += "Buffer #" + i + ": " + bufferpool.get(i).toString();
+      }
+      return str;
+   }
 }

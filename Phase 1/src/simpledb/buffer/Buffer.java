@@ -189,18 +189,20 @@ public class Buffer {
       pins = 0;
       return blk;
    }
-   
+
+   @Override
+   public String toString(){
+      return "Block in buffer: " + blk.toString() + ", pinned: " + pins;
+   }
+
+
+
    //made getter and setter for new time variable to be used with LRU
 	public long getTime(){
    	    return time;
 	}
-	
+
 	public void setTime(long time){
    	    this.time = time;
-	}
-	
-	@Override
-	public String toString(){
-		return "Block in buffer: " + blk.toString() + ", pinned: " + pins;
 	}
 }

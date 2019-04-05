@@ -19,6 +19,7 @@ public class Buffer {
    private int pins = 0;
    private int modifiedBy = -1;  // negative means not modified
    private int logSequenceNumber = -1; // negative means no corresponding log record
+   //added time to keep track of LRU
    private long time = -1;
 
    /**

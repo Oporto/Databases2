@@ -12,13 +12,13 @@ import java.util.LinkedList;
  *
  */
 class AdvBufferMgr {
-   //hash map to hold the buffer pool
+   //CS4432-Project1:hash map to hold the buffer pool
    private Map<Integer, Buffer> bufferpool;
-   //reversed hashmap of buffer pool for ease of use
+   //CS4432-Project1:reversed hashmap of buffer pool for ease of use
    private Map<Buffer, Integer> reversedPool;
-   //map that holds the block and integer that correlates to the buffer
+   //CS4432-Project1:map that holds the block and integer that correlates to the buffer
    private Map<Block, Integer> blockLocations;
-   //linked list of all of the empty buffers that are available for use
+   //CS4432-Project1:linked list of all of the empty buffers that are available for use
    private LinkedList<Integer> emptyBuffers;
    private int numAvailable;
 
@@ -36,16 +36,16 @@ class AdvBufferMgr {
     * @param numbuffs the number of buffer slots to allocate
     */
    AdvBufferMgr(int numbuffs) {
-   	//creation of bufferpool and reversedpool
+   	//CS4432-Project1:creation of bufferpool and reversedpool
       bufferpool = new HashMap<Integer, Buffer>();
       reversedPool = new HashMap<Buffer, Integer>();
       blockLocations = new HashMap<Block, Integer>();
       emptyBuffers = new LinkedList<Integer>();
-      //set number of buffers to be numAvailable
+      //CS4432-Project1:set number of buffers to be numAvailable
       numAvailable = numbuffs;
-      //creation of buffer
+      //CS4432-Project1:creation of buffer
       Buffer buffer;
-      //for loop to go through # of buffers and create new buffer for each then add to both pools and the empty list
+      //CS4432-Project1:for loop to go through # of buffers and create new buffer for each then add to both pools and the empty list
       for (int i=0; i<numbuffs; i++) {
          buffer = new Buffer();
          bufferpool.put(i, buffer);
@@ -60,7 +60,7 @@ class AdvBufferMgr {
     */
    synchronized void flushAll(int txnum) {
       Buffer buff;
-      //loops through buffer pool getting each one and checking if modified (dirty bit) and flushes if so
+      //CS4432-Project1:loops through buffer pool getting each one and checking if modified (dirty bit) and flushes if so
       for (int i = 0; i < bufferpool.size(); i++) {
          buff = bufferpool.get(i);
          if (buff.isModifiedBy(txnum))
@@ -78,25 +78,25 @@ class AdvBufferMgr {
     * @return the pinned buffer
     */
    synchronized Buffer pin(Block blk) {
-   	//using the blocks finds an existing buffer
+   	//CS4432-Project1:using the blocks finds an existing buffer
       Buffer buff = findExistingBuffer(blk);
-      //if the buffer is null finds/chooses an unpinned buffer
+      //CS4432-Project1:if the buffer is null finds/chooses an unpinned buffer
       if (buff == null) {
          buff = chooseUnpinnedBuffer();
          if (buff == null)
             return null;
          int i = reversedPool.get(buff);
-         //puts blk in map to keep track of it
+         //CS4432-Project1:puts blk in map to keep track of it
          blockLocations.put(blk, i);
-         //assign the block to the buffer
+         //CS4432-Project1:assign the block to the buffer
          buff.assignToBlock(blk);
-         //set time to be used later with LRU
+         //CS4432-Project1:set time to be used later with LRU
          buff.setTime(System.currentTimeMillis());
       }
-      //if buffer is not pinned subtract num available
+      //CS4432-Project1:if buffer is not pinned subtract num available
       if (!buff.isPinned())
          numAvailable--;
-      //pin buffer then return
+      //CS4432-Project1:pin buffer then return
       buff.pin();
       return buff;
    }
@@ -111,19 +111,19 @@ class AdvBufferMgr {
     * @return the pinned buffer
     */
    synchronized Buffer pinNew(String filename, PageFormatter fmtr) {
-   	//use the function chooseUnpinnedBuffer to find buffer to pin
+   	//CS4432-Project1:use the function chooseUnpinnedBuffer to find buffer to pin
       Buffer buff = chooseUnpinnedBuffer();
       if (buff == null)
          return null;
-      //assign blk
+      //CS4432-Project1:assign blk
       Block blk = buff.assignToNew(filename, fmtr);
-      //get the buffer based on the int with reversedpool
+      //CS4432-Project1:get the buffer based on the int with reversedpool
       int i = reversedPool.get(buff);
-      //put blk, with int, into block hash map
+      //CS4432-Project1:put blk, with int, into block hash map
       blockLocations.put(blk, i);
-      //set time again for LRU use
+      //CS4432-Project1:set time again for LRU use
       buff.setTime(System.currentTimeMillis());
-      //pin buff
+      //CS4432-Project1:pin buff
       numAvailable--;
       buff.pin();
       return buff;
@@ -134,7 +134,7 @@ class AdvBufferMgr {
     * @param buff the buffer to be unpinned
     */
    synchronized void unpin(Buffer buff) {
-   	//unpin buffer
+   	//CS4432-Project1:unpin buffer
       buff.unpin();
       int i = reversedPool.get(buff);
       if (!buff.isPinned())
@@ -150,7 +150,7 @@ class AdvBufferMgr {
    }
    
    private Buffer findExistingBuffer(Block blk) {
-   	//if block map contains the blk then return the buffer it is attached to else return null
+   	//CS4432-Project1:if block map contains the blk then return the buffer it is attached to else return null
 	   if (blockLocations.containsKey(blk)) {
 		   return bufferpool.get(blockLocations.get(blk));
 	   }
@@ -158,19 +158,19 @@ class AdvBufferMgr {
    }
    
    private Buffer findEmptyBuffer() {
-   	//if the empty buffer list is empty return null
+   	//CS4432-Project1:if the empty buffer list is empty return null
       if (emptyBuffers.isEmpty())
    	    return null;
       else
-      	//otherwise return the first of the empty buffer list and pops it
+      	//CS4432-Project1:otherwise return the first of the empty buffer list and pops it
          return bufferpool.get(emptyBuffers.pop());
 	   }
 	   
    private Buffer LRUFinder(){
-   	//get the time the first of the bufferpool, and get the first buffer
+   	//CS4432-Project1:get the time the first of the bufferpool, and get the first buffer
    	    long lruTimes = bufferpool.get(0).getTime();
    	    Buffer lruBuffer = bufferpool.get(0);
-	//loop through bufferpool and check for times, updating lruTimes and lruBuffer as you find lru
+	//CS4432-Project1:loop through bufferpool and check for times, updating lruTimes and lruBuffer as you find lru
 	   for (int i = 0; i < bufferpool.size(); i++)
 	   {
 		   Buffer buff = bufferpool.get(i);
@@ -181,30 +181,30 @@ class AdvBufferMgr {
 			   lruBuffer = buff;
 		   }
 	   }
-	   //return lrubuffer, we found it!
+	   //CS4432-Project1:return lrubuffer, we found it!
 	   return lruBuffer;
    }
 
    private Buffer chooseUnpinnedBuffer() {
       System.out.println(bufferpool.toString());
-   	//use the findEmptyBuffer function, if the buffer is null return that buffer
+   	//CS4432-Project1:use the findEmptyBuffer function, if the buffer is null return that buffer
       Buffer buff = findEmptyBuffer();
       if (buff != null){
 	      return buff;
       }
-      //return the lru buffer
+      //CS4432-Project1:return the lru buffer
 	   Buffer LRUChoice = LRUFinder();
-	   //line to clear the block, decided we don't need but i'll leave it here in case
-	   //blockLocations.remove(LRUChoice.block());
-	   //return the lru!
+	   //CS4432-Project1:line to clear the block, decided we don't need but i'll leave it here in case
+	   //CS4432-Project1:blockLocations.remove(LRUChoice.block());
+	   //CS4432-Project1:return the lru!
 	   return LRUChoice;
    }
 
    @Override
    public String toString(){
-   	//to String function for advanced buffer manager,
+   	//CS4432-Project1:to String function for advanced buffer manager,
       String str = "Advanced Buffer Manager: \n";
-      // for loop to go through bufferpool
+      // CS4432-Project1:for loop to go through bufferpool
       for (int i = 0; i < bufferpool.size(); i++){
          str += "Buffer #" + i + ": " + bufferpool.get(i).toString();
       }

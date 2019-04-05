@@ -19,7 +19,7 @@ public class Buffer {
    private int pins = 0;
    private int modifiedBy = -1;  // negative means not modified
    private int logSequenceNumber = -1; // negative means no corresponding log record
-   //added time to keep track of LRU
+   //CS4432-Project1: added time to keep track of LRU
    private long time = -1;
 
    /**
@@ -191,6 +191,7 @@ public class Buffer {
       return blk;
    }
 
+   //CS4432-Project1: overrided the toString function
    @Override
    public String toString(){
       return "Block in buffer: " + blk.toString() + ", pinned: " + pins;
@@ -198,7 +199,7 @@ public class Buffer {
 
 
 
-   //made getter and setter for new time variable to be used with LRU
+   //CS4432-Project1:made getter and setter for new time variable to be used with LRU
 	public long getTime(){
    	    return time;
 	}

@@ -94,10 +94,9 @@ class AdvBufferMgr {
       //CS4432-Project1:if buffer is not pinned subtract num available
       if (!buff.isPinned())
          numAvailable--;
-       //CS4432-Project1:set time to be used later with LRU
-       buff.setTime(System.currentTimeMillis());
-
-       //CS4432-Project1:pin buffer then return
+      //CS4432-Project1:set time to be used later with LRU
+      buff.setTime(System.currentTimeMillis());
+      // CS4432-Project1:pin buffer then return
       buff.pin();
       return buff;
    }
@@ -205,7 +204,7 @@ class AdvBufferMgr {
 
    @Override
    public String toString(){
-   	//CS4432-Project1:to String function for advanced buffer manager,
+   	  //CS4432-Project1:to String function for advanced buffer manager,
       String str = "Advanced Buffer Manager: \n";
       // CS4432-Project1:for loop to go through bufferpool
       for (int i = 0; i < bufferpool.size(); i++){

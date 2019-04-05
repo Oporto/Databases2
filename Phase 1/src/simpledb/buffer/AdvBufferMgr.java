@@ -186,6 +186,7 @@ class AdvBufferMgr {
    }
 
    private Buffer chooseUnpinnedBuffer() {
+      System.out.println(bufferpool.toString());
    	//use the findEmptyBuffer function, if the buffer is null return that buffer
       Buffer buff = findEmptyBuffer();
       if (buff != null){

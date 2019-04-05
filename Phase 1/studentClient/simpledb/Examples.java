@@ -16,7 +16,8 @@ public class Examples
 			
 			
 			//Variety of testing statements, I will just be printing out the names for the result set for ease of use
-			//and will be checking against the above inserts
+			//and will be checking against inserts done in CreateStudentDB.java
+			//these are a variety of basic queries that simpleDB can handle, and even has an insert halfway through to check insertion while running
 			
 			//statements to check that the above data is correctly in tables
 			String s = "select SId, Sname, MajorId, GradYear from student";

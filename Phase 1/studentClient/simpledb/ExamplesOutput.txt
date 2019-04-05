@@ -1,0 +1,107 @@
+Printing Select from student test
+
+joe
+
+amy
+
+max
+
+sue
+
+bob
+
+kim
+
+art
+
+pat
+
+lee
+
+Printing Select from dept test
+
+compsci
+
+math
+
+drama
+
+Printing Select from course test
+
+db systems
+
+compilers
+
+calculus
+
+algebra
+
+acting
+
+elocution
+
+Printing Select from section test
+
+13
+
+23
+
+33
+
+43
+
+53
+
+Printing Select from enroll test
+
+14
+
+24
+
+34
+
+44
+
+54
+
+64
+
+Printing Conditional1 from student test
+
+max
+
+Printing Conditional2 from student test
+
+joe
+
+max
+
+lee
+
+Printing Conditional3 from student test
+
+sue
+
+Printing Conditional from dept test
+
+compsci
+
+Printing Conditional from course test
+
+db systems
+
+compilers
+
+calculus
+
+algebra
+
+acting
+
+elocution
+
+Printing Conditional4 from student after update test
+
+test
+
+Total Time elapsed: 81.249 ms

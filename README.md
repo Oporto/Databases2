@@ -1,6 +1,6 @@
 # Databases2
-Pedro De Vasconcellos Oporto
-Katherine Thompson
+
+Team: Pedro De Vasconcellos Oporto and Katherine Thompson
 
 Follow set up instructions provided for class (we used the IntelliJ instructions)
 When you start you must run StartUp, then run CreateStudentDB, finally Examples (in studentClient->simpleDB) can be run for some testing based on the tables created in CreateStudentDB.

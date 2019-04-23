@@ -42,11 +42,11 @@ public class Block {
       Block blk = (Block) obj;
       return filename.equals(blk.filename) && blknum == blk.blknum;
    }
-   
+   //CS4432-Project1: overrided the toString function
    public String toString() {
       return "[file " + filename + ", block " + blknum + "]";
    }
-   
+   //CS4432-Project1: overrided the hashcode function
    public int hashCode() {
       return toString().hashCode();
    }

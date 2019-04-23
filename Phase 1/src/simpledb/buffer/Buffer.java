@@ -3,6 +3,8 @@ package simpledb.buffer;
 import simpledb.server.SimpleDB;
 import simpledb.file.*;
 
+import java.util.UUID;
+
 /**
  * An individual buffer.
  * A buffer wraps a page and stores information about its status,
@@ -21,6 +23,8 @@ public class Buffer {
    private int logSequenceNumber = -1; // negative means no corresponding log record
    //CS4432-Project1: added time to keep track of LRU
    private long time = -1;
+   //CS4432-Project1: added UUDI for hashcode that is consistent even if buffer gets modified
+   private UUID id;
 
    /**
     * Creates a new buffer, wrapping a new 
@@ -36,7 +40,9 @@ public class Buffer {
     * {@link simpledb.server.SimpleDB#initFileAndLogMgr(String)} or
     * is called first.
     */
-   public Buffer() {}
+   public Buffer() {
+      this.id = UUID.randomUUID();
+   }
 
    /**
     * Returns the integer value at the specified offset of the
@@ -195,6 +201,12 @@ public class Buffer {
    @Override
    public String toString(){
       return "Block in buffer: " + blk.toString() + ", pinned: " + pins;
+   }
+
+   //CS4432-Project1: overrided the hashcode function
+   @Override
+   public int hashCode(){
+      return id.hashCode();
    }
 
 

@@ -1,5 +1,6 @@
 import org.junit.Test;
 import simpledb.file.*;
+import simpledb.server.Startup;
 
 import static junit.framework.TestCase.*;
 
@@ -96,5 +97,15 @@ public class Phase1Tests {
         wait(10^9);
         bufferMgr.pin(new Block("FakeFile", 4));
         System.out.println(bufferMgr.toString());
+    }
+
+    @Test
+    public void testSimpleDB() throws Exception{
+        String[] args = new String[1];
+        args[0] = "testcs4432DB";
+        simpledb.server.Startup.main(args);
+
+        CreateStudentDB.main(args);
+        Examples.main(args);
     }
 }

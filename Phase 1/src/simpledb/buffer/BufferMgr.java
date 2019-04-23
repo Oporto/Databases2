@@ -20,7 +20,7 @@ import simpledb.file.*;
  */
 public class BufferMgr {
    private static final long MAX_TIME = 10000; // 10 seconds
-   private AdvBufferMgr bufferMgr;
+   private BasicBufferMgr bufferMgr;
    
    /**
     * Creates a new buffer manager having the specified 
@@ -36,7 +36,7 @@ public class BufferMgr {
     * @param numbuffers the number of buffer slots to allocate
     */
    public BufferMgr(int numbuffers) {
-      bufferMgr = new AdvBufferMgr(numbuffers);
+      bufferMgr = new BasicBufferMgr(numbuffers);
    }
    
    /**

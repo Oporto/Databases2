@@ -13,11 +13,21 @@ public class CreateIndexData {
    /**
     * Saves the table and field names of the specified index.
     */
-   public CreateIndexData(String idxname, String tblname, String fldname, IndexType type) {
+   public CreateIndexData(String typeName, String idxname, String tblname, String fldname) {
       this.idxname = idxname;
       this.tblname = tblname;
       this.fldname = fldname;
-      this.type = type;
+      switch(typeName){
+         case "bt":
+            this.type = IndexType.BTree;
+            break;
+         case "eh":
+            this.type = IndexType.ExtHashing;
+            break;
+         default:
+            this.type = IndexType.StaticHashing;
+            break;
+      }
    }
    
    /**

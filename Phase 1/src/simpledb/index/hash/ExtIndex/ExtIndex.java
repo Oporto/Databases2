@@ -1,4 +1,4 @@
-package simpledb.index.hash;
+package simpledb.index.hash.ExtIndex;
 
 import simpledb.index.Index;
 import simpledb.query.Constant;
@@ -16,7 +16,10 @@ import simpledb.tx.Transaction;
  */
 public class ExtIndex implements Index {
 	public static int NUM_BUCKETS = 100;
+	private ExtIndexTreeNode tree_head;
+	private int tree_height;
 	private String idxname;
+	private int max_bucket_size;
 	private Schema sch;
 	private Transaction tx;
 	private Constant searchkey = null;
@@ -32,6 +35,11 @@ public class ExtIndex implements Index {
 		this.idxname = idxname;
 		this.sch = sch;
 		this.tx = tx;
+		this.max_bucket_size = 100; //TODO: Fix arbitrary value for max bucket size
+		this.tree_height = 1;
+		this.tree_head = new ExtIndexTreeNode(0,
+				new ExtIndexTreeBucketNode(1, 0,0),
+				new ExtIndexTreeBucketNode(1, 1,0));
 	}
 
 	/**
@@ -46,7 +54,19 @@ public class ExtIndex implements Index {
 	public void beforeFirst(Constant searchkey) {
 		close();
 		this.searchkey = searchkey;
-		int bucket = searchkey.hashCode() % NUM_BUCKETS;
+		ExtIndexTreeBucketNode bucket = findTreeBucket(searchkey.hashCode());
+		String tblname = idxname + bucket;
+		TableInfo ti = new TableInfo(tblname, sch);
+		ts = new TableScan(ti, tx);
+	}
+
+	public void beforeFirstInsert(Constant searchkey, int n_of_inserts) {
+		close();
+		this.searchkey = searchkey;
+		ExtIndexTreeBucketNode bucket = findTreeBucket(searchkey.hashCode());
+		if (bucket.getSize() + n_of_inserts > max_bucket_size){
+			//TODO: Split buckets and reassign to new bucket that matches searchkey hashcode
+		}
 		String tblname = idxname + bucket;
 		TableInfo ti = new TableInfo(tblname, sch);
 		ts = new TableScan(ti, tx);
@@ -82,7 +102,7 @@ public class ExtIndex implements Index {
 	 * @see Index#insert(Constant, RID)
 	 */
 	public void insert(Constant val, RID rid) {
-		beforeFirst(val);
+		beforeFirstInsert(val, 1);
 		ts.insert();
 		ts.setInt("block", rid.blockNumber());
 		ts.setInt("id", rid.id());
@@ -98,6 +118,10 @@ public class ExtIndex implements Index {
 	 */
 	public void delete(Constant val, RID rid) {
 		beforeFirst(val);
+		/*
+		TODO: Add check for bucket being empty after deletion and handle that scenario
+		 (beforeFirst is used on update and delete as well so it shouldn't worry about this case)
+		 */
 		while(next())
 			if (getDataRid().equals(rid)) {
 				ts.delete();
@@ -124,7 +148,14 @@ public class ExtIndex implements Index {
 	 * @param rpb the number of records per block (not used here)
 	 * @return the cost of traversing the index
 	 */
+	//TODO: Completely override
 	public static int searchCost(int numblocks, int rpb){
 		return numblocks / ExtIndex.NUM_BUCKETS;
+	}
+
+	public ExtIndexTreeBucketNode findTreeBucket(int hashedKey){
+		char[] bin = Integer.toBinaryString(hashedKey).toCharArray();
+		ExtIndexTreeBucketNode bucket = tree_head.getBucket(bin);
+		return bucket;
 	}
 }

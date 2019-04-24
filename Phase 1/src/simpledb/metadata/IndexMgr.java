@@ -26,6 +26,7 @@ public class IndexMgr {
          sch.addStringField("indexname", MAX_NAME);
          sch.addStringField("tablename", MAX_NAME);
          sch.addStringField("fieldname", MAX_NAME);
+         sch.addStringField("indextype", MAX_NAME);
          tblmgr.createTable("idxcat", sch, tx);
       }
       ti = tblmgr.getTableInfo("idxcat", tx);
@@ -35,14 +36,16 @@ public class IndexMgr {
     * Creates an index of the specified type for the specified field.
     * A unique ID is assigned to this index, and its information
     * is stored in the idxcat table.
+    * @param idxtype the type of the index
     * @param idxname the name of the index
     * @param tblname the name of the indexed table
     * @param fldname the name of the indexed field
     * @param tx the calling transaction
     */
-   public void createIndex(String idxname, String tblname, String fldname, Transaction tx) {
+   public void createIndex(IndexType idxtype, String idxname, String tblname, String fldname, Transaction tx) {
       RecordFile rf = new RecordFile(ti, tx);
       rf.insert();
+      rf.setString("indextype", idxtype.toString());
       rf.setString("indexname", idxname);
       rf.setString("tablename", tblname);
       rf.setString("fieldname", fldname);
@@ -63,7 +66,8 @@ public class IndexMgr {
          if (rf.getString("tablename").equals(tblname)) {
          String idxname = rf.getString("indexname");
          String fldname = rf.getString("fieldname");
-         IndexInfo ii = new IndexInfo(idxname, tblname, fldname, tx);
+         String idxtype = rf.getString("indextype");
+         IndexInfo ii = new IndexInfo(idxtype, idxname, tblname, fldname, tx);
          result.put(fldname, ii);
       }
       rf.close();

@@ -24,6 +24,7 @@ public class CreateIndexData {
          case "eh":
             this.type = IndexType.ExtHashing;
             break;
+         //In case the user types sh or an undefined index type, set it to the default static hashing
          default:
             this.type = IndexType.StaticHashing;
             break;

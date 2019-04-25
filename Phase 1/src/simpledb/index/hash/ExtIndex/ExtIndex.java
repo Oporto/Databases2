@@ -3,6 +3,8 @@ package simpledb.index.hash.ExtIndex;
 import simpledb.index.Index;
 import simpledb.query.Constant;
 import simpledb.query.TableScan;
+import simpledb.file.Block;
+import simpledb.record.RecordFile;
 import simpledb.record.RID;
 import simpledb.record.Schema;
 import simpledb.record.TableInfo;
@@ -18,6 +20,7 @@ public class ExtIndex implements Index {
 	public static int NUM_BUCKETS = 100;
 	private ExtIndexTreeNode tree_head;
 	private int tree_height;
+	
 	private String idxname;
 	private int max_bucket_size;
 	private Schema sch;

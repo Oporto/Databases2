@@ -2,6 +2,8 @@ package simpledb.metadata;
 
 import static java.sql.Types.INTEGER;
 import static simpledb.file.Page.BLOCK_SIZE;
+
+import simpledb.index.hash.ExtIndex.ExtIndex;
 import simpledb.server.SimpleDB;
 import simpledb.tx.Transaction;
 import simpledb.record.*;
@@ -47,9 +49,22 @@ public class IndexInfo {
     * @return the Index object associated with this information
     */
    public Index open() {
+   	System.out.println("Index being created is" + idxtype);
       Schema sch = schema();
-      // Create new HashIndex for hash indexing
-      return new HashIndex(idxname, sch, tx);
+      switch (idxtype)
+      {
+	//CS4432: switch statement to creat three different indexes depending on the type
+	      case "sh":
+		      return new HashIndex(idxname, sch, tx);
+	      case "bt":
+		      return new BTreeIndex(idxname, sch, tx);
+	      case "eh":
+		      return new ExtIndex(idxname, sch, tx);
+	      default:
+	      	//CS4432: default is a static hash index, though if it gets to this it is an error
+		      System.out.println("Something is wrong with the type");
+		      return new HashIndex(idxname, sch, tx);
+      }
    }
    
    /**

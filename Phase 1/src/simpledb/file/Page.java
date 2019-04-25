@@ -42,6 +42,7 @@ public class Page {
     * to create and test databases having a lot of blocks.
     * A more realistic value would be 4K.
     */
+   //TODO should we increase this?
    public static final int BLOCK_SIZE = 400;
    
    /**

@@ -143,13 +143,42 @@ public class ExHashIndex implements Index
 	}
 	
 	@Override
+	//for bckt inserts new record into table scan
 	public void insert(Constant dataval, RID datarid)
 	{
-	
+		beforeFirst(dataval);
+		idxBcktTableScan.beforeFirst();
+		
+		//first step is there an existing bucket? lets see
+		while(idxBcktTableScan.next()){
+			//TODO was confused on this part and need to review before submitting
+			//need two values 1.current has val, and bucket val (its bit num)
+			int bcktnummask = idxBcktTableScan.getInt(BCKT_NUM) & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
+			int cbcktnummask = cBucketsNum & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
+			
+			//are these values equal
+			if(bcktnummask == cbcktnummask){
+				//is bckt boutta be full
+				if (idxBcktTableScan.getInt(BCKT_TUPLES) >= NUM_BCKT_TUPLES){
+					//now the hard stuff, need to reorder these bad boys
+					reorderBcktRecords(dataval, datarid);
+					return;
+				} else {
+					//easy one juse insert into a bucket that already exists
+					insertExistingIdxBckt(dataval, datarid);
+					//TODO could use this for printing to make sure everything is inserting correctly
+					return;
+				}
+			}
+		}
+		//new value and new bucket option? & getMask(currentBitCount), currentBitCount);
+		insertNewIdxBckt(dataval, datarid, cBucketsNum & getMaskValue(cBits), cBits);
+		//TODO can do same type of printing down here as well
 	}
 	
+	//reorganizing all the bucket values, big oof
 	public void reorderBcktRecords(Constant val, RID rid){
-	
+	// TODO finish this function
 	}
 	
 	//inserting the record into a bucket that already exists, also increments tuples in bucket

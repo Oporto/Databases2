@@ -159,6 +159,7 @@ public class ExHashIndex implements Index
 				if (idxBcktTableScan.getInt(BCKT_TUPLES) >= NUM_BCKT_TUPLES){
 					//now the hard stuff, need to reorder these bad boys
 					reorderBcktRecords();
+					insert(dataval,datarid);
 					return;
 				} else {
 					//easy one juse insert into a bucket that already exists

@@ -91,6 +91,7 @@ public class Parser {
 // Methods for parsing the various update commands
    
    public Object updateCmd() {
+      System.out.println("Update cmd");
       if (lex.matchKeyword("insert"))
          return insert();
       else if (lex.matchKeyword("delete"))
@@ -98,10 +99,12 @@ public class Parser {
       else if (lex.matchKeyword("update"))
          return modify();
       else
+         System.out.println("Matched create");
          return create();
    }
    
    private Object create() {
+      System.out.println("Found create");
       lex.eatKeyword("create");
       if (lex.matchKeyword("table"))
          return createTable();
@@ -238,13 +241,19 @@ public class Parser {
    public CreateIndexData createIndex() {
       System.out.println("Starting to create index");
       String idxtype = lex.eatId();
+      System.out.println("ate type");
       lex.eatKeyword("index");
+      System.out.println("ate index");
       String idxname = lex.eatId();
+      System.out.println("ate name");
       lex.eatKeyword("on");
+      System.out.println("ate on");
       String tblname = lex.eatId();
+      System.out.println("ate table");
       lex.eatDelim('(');
       String fldname = field();
       lex.eatDelim(')');
+      System.out.println("ate field");
       return new CreateIndexData(idxtype, idxname, tblname, fldname);
    }
 }

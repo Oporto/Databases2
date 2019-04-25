@@ -6,7 +6,7 @@
     <content url="file://$MODULE_DIR$/Phase 1">
       <sourceFolder url="file://$MODULE_DIR$/Phase 1/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Phase 1/studentClient/simpledb" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Phase 1/test_phase1" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Phase 1/test_project2" isTestSource="true" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />

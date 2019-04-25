@@ -26,10 +26,6 @@ public class ExHashIndex implements Index
 	protected Constant searchKey = null;
 	protected TableScan tablescan = null;
 	
-	//files for the index
-	protected final String IDX_FILENAME = "exhashindexfile";
-	protected final String GBL_FILENAME = "exhashgblfile";
-	
 	//global and index field names?
 	//TODO do i need more
 	protected final String GBL_FiELD = "gbl";
@@ -37,6 +33,10 @@ public class ExHashIndex implements Index
 	protected final String BCKT_BITS = "bcktbits";
 	protected final String BCKT_TUPLES = "bckttuples";
 	protected final String BCKT_FILENAME = "idxfilename";
+	
+	//files for the index
+	protected final String IDX_FILENAME = "exhashindexfile";
+	protected final String GBL_FILENAME = "exhashgblfile";
 	
 	//max num tuples in idx bucket;; idk this is a rando value
 	protected final int NUM_BCKT_TUPLES = 100;
@@ -82,8 +82,8 @@ public class ExHashIndex implements Index
 		idxBcktSchema.addIntField(BCKT_BITS);
 		idxBcktSchema.addIntField(BCKT_TUPLES);
 		idxBcktSchema.addStringField(BCKT_FILENAME, 10);
-		
-		idxBcktTableInfo = new TableInfo(IDX_FILENAME, idxBcktSchema);
+		//TODO fix this if it is not working
+		idxBcktTableInfo = new TableInfo(IDX_FILENAME + BCKT_NUM, idxBcktSchema);
 		idxBcktTableScan = new TableScan(idxBcktTableInfo, tx);
 		idxBcktTableScan.beforeFirst();
 	}
@@ -178,28 +178,49 @@ public class ExHashIndex implements Index
 	//need to increase dir size and put all the values at their new bit values
 	public void reorderBcktRecords(Constant val, RID rid){
 		int oldBcktBits = idxBcktTableScan.getInt(BCKT_BITS);
-		//bucket bits greater, so need to increment
-		idxBcktTableScan.setInt(BCKT_BITS, idxBcktTableScan.getInt(BCKT_BITS)+1);
 		
 		//does the global need to be incremented? increment current and set to global
-		if (idxBcktTableScan.getInt(BCKT_BITS) > cBits){
+		if ((idxBcktTableScan.getInt(BCKT_BITS) + 1) > cBits){
 			cBits++;
 			setGblBits();
 		}
-		//open current bucket file, this one is full and we gonna have to do some work on it
-		String fname = idxBcktTableScan.getString(BCKT_FILENAME);
-		TableScan tblscan = getTableFromFName(fname);
-		tblscan.beforeFirst();
 		
 		//i think we need this to track the displaced bois
 		List<Constant> idkList = new ArrayList<Constant>();
 		
-		//lets go through all the records in the file
-		while(tblscan.next()){
-			Constant key = tblscan.getVal("dataval");
-			int bckt = key.hashCode()%HASH_MOD_VAL;
+		idxBcktTableScan.beforeFirst();
+		while (idxBcktTableScan.next()){
 			
-			//values were
+			//bucket bits greater, so need to increment
+			idxBcktTableScan.setInt(BCKT_BITS, idxBcktTableScan.getInt(BCKT_BITS)+1);
+			
+			//open current bucket file, this one is full and we gonna have to do some work on it
+			String fname = idxBcktTableScan.getString(BCKT_FILENAME);
+			TableScan tblscan = getTableFromFName(fname);
+			tblscan.beforeFirst();
+			
+			//lets go through all the records in the file
+			while(tblscan.next()){
+				Constant key = tblscan.getVal("dataval");
+				int bckt = key.hashCode()%HASH_MOD_VAL;
+				
+				//masked values for the record and  and also for new bckt bits
+				int chckbcktnummask = idxBcktTableScan.getInt(BCKT_NUM) & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
+				int bcktnummask = bckt & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
+				
+				//ok so now we increased the bit value but what if a record should be hashed in here
+				//we gotta remove that ish and resort it, so lets add it to our list for now
+				if (bcktnummask != chckbcktnummask){
+					idkList.add(key);
+					//idxBcktTableScan.setInt(BCKT_TUPLES, idxBcktTableScan.getInt());
+				
+				/*
+				int b = prevBucketBits;
+				int n = indexBucketTableScan.getInt(BUCKET_NUM);
+				int newN = (int) (n + Math.pow(2, b));
+				*/
+				}
+		}
 		}
 		
 	// TODO finish this function

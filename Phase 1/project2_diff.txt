@@ -1,0 +1,2356 @@
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+index 0000000..e96534f
+--- /dev/null
++++ b/.idea/uiDesigner.xml
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/Phase 1/bin/.classpath b/Phase 1/bin/.classpath
+new file mode 100644
+index 0000000..cb89b6d
+--- /dev/null
++++ b/Phase 1/bin/.classpath	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" path=""/>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
++	<classpathentry combineaccessrules="false" kind="src" path="/simpledb2.10"/>
++	<classpathentry kind="output" path=""/>
++</classpath>
+diff --git a/Phase 1/bin/.project b/Phase 1/bin/.project
+new file mode 100644
+index 0000000..1b11ec0
+--- /dev/null
++++ b/Phase 1/bin/.project	
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>simpledb client</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++	</natures>
++</projectDescription>
+diff --git a/Phase 1/bin/ChangeMajor.class b/Phase 1/bin/ChangeMajor.class
+new file mode 100644
+index 0000000..a6db846
+Binary files /dev/null and b/Phase 1/bin/ChangeMajor.class differ
+diff --git a/Phase 1/bin/CreateAndTestTables.class b/Phase 1/bin/CreateAndTestTables.class
+new file mode 100644
+index 0000000..0137b56
+Binary files /dev/null and b/Phase 1/bin/CreateAndTestTables.class differ
+diff --git a/Phase 1/bin/CreateStudentDB.class b/Phase 1/bin/CreateStudentDB.class
+new file mode 100644
+index 0000000..096e2f1
+Binary files /dev/null and b/Phase 1/bin/CreateStudentDB.class differ
+diff --git a/Phase 1/bin/CreateStudentDB_Indexed.class b/Phase 1/bin/CreateStudentDB_Indexed.class
+new file mode 100644
+index 0000000..fe75b69
+Binary files /dev/null and b/Phase 1/bin/CreateStudentDB_Indexed.class differ
+diff --git a/Phase 1/bin/Examples.class b/Phase 1/bin/Examples.class
+new file mode 100644
+index 0000000..4f1ffed
+Binary files /dev/null and b/Phase 1/bin/Examples.class differ
+diff --git a/Phase 1/bin/ExamplesOutput.txt b/Phase 1/bin/ExamplesOutput.txt
+new file mode 100644
+index 0000000..f57f6e0
+--- /dev/null
++++ b/Phase 1/bin/ExamplesOutput.txt	
+@@ -0,0 +1,107 @@
++Printing Select from student test
++
++joe
++
++amy
++
++max
++
++sue
++
++bob
++
++kim
++
++art
++
++pat
++
++lee
++
++Printing Select from dept test
++
++compsci
++
++math
++
++drama
++
++Printing Select from course test
++
++db systems
++
++compilers
++
++calculus
++
++algebra
++
++acting
++
++elocution
++
++Printing Select from section test
++
++13
++
++23
++
++33
++
++43
++
++53
++
++Printing Select from enroll test
++
++14
++
++24
++
++34
++
++44
++
++54
++
++64
++
++Printing Conditional1 from student test
++
++max
++
++Printing Conditional2 from student test
++
++joe
++
++max
++
++lee
++
++Printing Conditional3 from student test
++
++sue
++
++Printing Conditional from dept test
++
++compsci
++
++Printing Conditional from course test
++
++db systems
++
++compilers
++
++calculus
++
++algebra
++
++acting
++
++elocution
++
++Printing Conditional4 from student after update test
++
++test
++
++Total Time elapsed: 81.249 ms
+\ No newline at end of file
+diff --git a/Phase 1/bin/FindMajors.class b/Phase 1/bin/FindMajors.class
+new file mode 100644
+index 0000000..8a73a47
+Binary files /dev/null and b/Phase 1/bin/FindMajors.class differ
+diff --git a/Phase 1/bin/META-INF/simpledb2.10.kotlin_module b/Phase 1/bin/META-INF/simpledb2.10.kotlin_module
+new file mode 100644
+index 0000000..8fb6019
+Binary files /dev/null and b/Phase 1/bin/META-INF/simpledb2.10.kotlin_module differ
+diff --git a/Phase 1/bin/SQLInterpreter.class b/Phase 1/bin/SQLInterpreter.class
+new file mode 100644
+index 0000000..b6fc72a
+Binary files /dev/null and b/Phase 1/bin/SQLInterpreter.class differ
+diff --git a/Phase 1/bin/StudentMajor.class b/Phase 1/bin/StudentMajor.class
+new file mode 100644
+index 0000000..549c6c2
+Binary files /dev/null and b/Phase 1/bin/StudentMajor.class differ
+diff --git a/Phase 1/bin/StudentMajorNoServer.class b/Phase 1/bin/StudentMajorNoServer.class
+new file mode 100644
+index 0000000..587c6d5
+Binary files /dev/null and b/Phase 1/bin/StudentMajorNoServer.class differ
+diff --git a/Phase 1/bin/simpledb/buffer/AdvBufferMgr.class b/Phase 1/bin/simpledb/buffer/AdvBufferMgr.class
+new file mode 100644
+index 0000000..ee01796
+Binary files /dev/null and b/Phase 1/bin/simpledb/buffer/AdvBufferMgr.class differ
+diff --git a/Phase 1/bin/simpledb/buffer/BasicBufferMgr.class b/Phase 1/bin/simpledb/buffer/BasicBufferMgr.class
+new file mode 100644
+index 0000000..7d24aa0
+Binary files /dev/null and b/Phase 1/bin/simpledb/buffer/BasicBufferMgr.class differ
+diff --git a/Phase 1/bin/simpledb/buffer/Buffer.class b/Phase 1/bin/simpledb/buffer/Buffer.class
+new file mode 100644
+index 0000000..e4b51a1
+Binary files /dev/null and b/Phase 1/bin/simpledb/buffer/Buffer.class differ
+diff --git a/Phase 1/bin/simpledb/buffer/BufferAbortException.class b/Phase 1/bin/simpledb/buffer/BufferAbortException.class
+new file mode 100644
+index 0000000..7e3470c
+Binary files /dev/null and b/Phase 1/bin/simpledb/buffer/BufferAbortException.class differ
+diff --git a/Phase 1/bin/simpledb/buffer/BufferMgr.class b/Phase 1/bin/simpledb/buffer/BufferMgr.class
+new file mode 100644
+index 0000000..0e34140
+Binary files /dev/null and b/Phase 1/bin/simpledb/buffer/BufferMgr.class differ
+diff --git a/Phase 1/bin/simpledb/buffer/PageFormatter.class b/Phase 1/bin/simpledb/buffer/PageFormatter.class
+new file mode 100644
+index 0000000..0243faf
+Binary files /dev/null and b/Phase 1/bin/simpledb/buffer/PageFormatter.class differ
+diff --git a/Phase 1/bin/simpledb/file/Block.class b/Phase 1/bin/simpledb/file/Block.class
+new file mode 100644
+index 0000000..657ee00
+Binary files /dev/null and b/Phase 1/bin/simpledb/file/Block.class differ
+diff --git a/Phase 1/bin/simpledb/file/FileMgr.class b/Phase 1/bin/simpledb/file/FileMgr.class
+new file mode 100644
+index 0000000..51374ce
+Binary files /dev/null and b/Phase 1/bin/simpledb/file/FileMgr.class differ
+diff --git a/Phase 1/bin/simpledb/file/Page.class b/Phase 1/bin/simpledb/file/Page.class
+new file mode 100644
+index 0000000..ddf797e
+Binary files /dev/null and b/Phase 1/bin/simpledb/file/Page.class differ
+diff --git a/Phase 1/bin/simpledb/index/Index.class b/Phase 1/bin/simpledb/index/Index.class
+new file mode 100644
+index 0000000..6c775ad
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/Index.class differ
+diff --git a/Phase 1/bin/simpledb/index/btree/BTPageFormatter.class b/Phase 1/bin/simpledb/index/btree/BTPageFormatter.class
+new file mode 100644
+index 0000000..8b3f20d
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/btree/BTPageFormatter.class differ
+diff --git a/Phase 1/bin/simpledb/index/btree/BTreeDir.class b/Phase 1/bin/simpledb/index/btree/BTreeDir.class
+new file mode 100644
+index 0000000..c40d7a4
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/btree/BTreeDir.class differ
+diff --git a/Phase 1/bin/simpledb/index/btree/BTreeIndex.class b/Phase 1/bin/simpledb/index/btree/BTreeIndex.class
+new file mode 100644
+index 0000000..41cb3d9
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/btree/BTreeIndex.class differ
+diff --git a/Phase 1/bin/simpledb/index/btree/BTreeLeaf.class b/Phase 1/bin/simpledb/index/btree/BTreeLeaf.class
+new file mode 100644
+index 0000000..fe1e6a2
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/btree/BTreeLeaf.class differ
+diff --git a/Phase 1/bin/simpledb/index/btree/BTreePage.class b/Phase 1/bin/simpledb/index/btree/BTreePage.class
+new file mode 100644
+index 0000000..9a0a875
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/btree/BTreePage.class differ
+diff --git a/Phase 1/bin/simpledb/index/btree/DirEntry.class b/Phase 1/bin/simpledb/index/btree/DirEntry.class
+new file mode 100644
+index 0000000..9587f65
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/btree/DirEntry.class differ
+diff --git a/Phase 1/bin/simpledb/index/hash/ExHashIndex.class b/Phase 1/bin/simpledb/index/hash/ExHashIndex.class
+new file mode 100644
+index 0000000..51c40c3
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/hash/ExHashIndex.class differ
+diff --git a/Phase 1/bin/simpledb/index/hash/HashIndex.class b/Phase 1/bin/simpledb/index/hash/HashIndex.class
+new file mode 100644
+index 0000000..6d2da8c
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/hash/HashIndex.class differ
+diff --git a/Phase 1/bin/simpledb/index/planner/IndexUpdatePlanner.class b/Phase 1/bin/simpledb/index/planner/IndexUpdatePlanner.class
+new file mode 100644
+index 0000000..13c8d20
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/planner/IndexUpdatePlanner.class differ
+diff --git a/Phase 1/bin/simpledb/index/query/IndexJoinPlan.class b/Phase 1/bin/simpledb/index/query/IndexJoinPlan.class
+new file mode 100644
+index 0000000..a5478f8
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/query/IndexJoinPlan.class differ
+diff --git a/Phase 1/bin/simpledb/index/query/IndexJoinScan.class b/Phase 1/bin/simpledb/index/query/IndexJoinScan.class
+new file mode 100644
+index 0000000..93bea51
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/query/IndexJoinScan.class differ
+diff --git a/Phase 1/bin/simpledb/index/query/IndexSelectPlan.class b/Phase 1/bin/simpledb/index/query/IndexSelectPlan.class
+new file mode 100644
+index 0000000..9c90acc
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/query/IndexSelectPlan.class differ
+diff --git a/Phase 1/bin/simpledb/index/query/IndexSelectScan.class b/Phase 1/bin/simpledb/index/query/IndexSelectScan.class
+new file mode 100644
+index 0000000..ce8f7ee
+Binary files /dev/null and b/Phase 1/bin/simpledb/index/query/IndexSelectScan.class differ
+diff --git a/Phase 1/bin/simpledb/log/BasicLogRecord.class b/Phase 1/bin/simpledb/log/BasicLogRecord.class
+new file mode 100644
+index 0000000..c2eb765
+Binary files /dev/null and b/Phase 1/bin/simpledb/log/BasicLogRecord.class differ
+diff --git a/Phase 1/bin/simpledb/log/LogIterator.class b/Phase 1/bin/simpledb/log/LogIterator.class
+new file mode 100644
+index 0000000..a4fdb88
+Binary files /dev/null and b/Phase 1/bin/simpledb/log/LogIterator.class differ
+diff --git a/Phase 1/bin/simpledb/log/LogMgr.class b/Phase 1/bin/simpledb/log/LogMgr.class
+new file mode 100644
+index 0000000..352f150
+Binary files /dev/null and b/Phase 1/bin/simpledb/log/LogMgr.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/AggregationFn.class b/Phase 1/bin/simpledb/materialize/AggregationFn.class
+new file mode 100644
+index 0000000..cee2f2f
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/AggregationFn.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/CountFn.class b/Phase 1/bin/simpledb/materialize/CountFn.class
+new file mode 100644
+index 0000000..ff67339
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/CountFn.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/GroupByPlan.class b/Phase 1/bin/simpledb/materialize/GroupByPlan.class
+new file mode 100644
+index 0000000..331f08c
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/GroupByPlan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/GroupByScan.class b/Phase 1/bin/simpledb/materialize/GroupByScan.class
+new file mode 100644
+index 0000000..21b14f5
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/GroupByScan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/GroupValue.class b/Phase 1/bin/simpledb/materialize/GroupValue.class
+new file mode 100644
+index 0000000..c623626
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/GroupValue.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/MaterializePlan.class b/Phase 1/bin/simpledb/materialize/MaterializePlan.class
+new file mode 100644
+index 0000000..b618cdd
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/MaterializePlan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/MaxFn.class b/Phase 1/bin/simpledb/materialize/MaxFn.class
+new file mode 100644
+index 0000000..8a9afec
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/MaxFn.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/MergeJoinPlan.class b/Phase 1/bin/simpledb/materialize/MergeJoinPlan.class
+new file mode 100644
+index 0000000..1d945f4
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/MergeJoinPlan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/MergeJoinScan.class b/Phase 1/bin/simpledb/materialize/MergeJoinScan.class
+new file mode 100644
+index 0000000..e63561d
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/MergeJoinScan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/RecordComparator.class b/Phase 1/bin/simpledb/materialize/RecordComparator.class
+new file mode 100644
+index 0000000..93b27b7
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/RecordComparator.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/SortPlan.class b/Phase 1/bin/simpledb/materialize/SortPlan.class
+new file mode 100644
+index 0000000..f198620
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/SortPlan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/SortScan.class b/Phase 1/bin/simpledb/materialize/SortScan.class
+new file mode 100644
+index 0000000..9fae4b2
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/SortScan.class differ
+diff --git a/Phase 1/bin/simpledb/materialize/TempTable.class b/Phase 1/bin/simpledb/materialize/TempTable.class
+new file mode 100644
+index 0000000..6225f41
+Binary files /dev/null and b/Phase 1/bin/simpledb/materialize/TempTable.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/IndexInfo.class b/Phase 1/bin/simpledb/metadata/IndexInfo.class
+new file mode 100644
+index 0000000..d217666
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/IndexInfo.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/IndexMgr.class b/Phase 1/bin/simpledb/metadata/IndexMgr.class
+new file mode 100644
+index 0000000..1ee68e0
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/IndexMgr.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/IndexType.class b/Phase 1/bin/simpledb/metadata/IndexType.class
+new file mode 100644
+index 0000000..b7ac4aa
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/IndexType.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/MetadataMgr.class b/Phase 1/bin/simpledb/metadata/MetadataMgr.class
+new file mode 100644
+index 0000000..db9bff7
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/MetadataMgr.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/StatInfo.class b/Phase 1/bin/simpledb/metadata/StatInfo.class
+new file mode 100644
+index 0000000..56f34a9
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/StatInfo.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/StatMgr.class b/Phase 1/bin/simpledb/metadata/StatMgr.class
+new file mode 100644
+index 0000000..3e846e6
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/StatMgr.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/TableMgr.class b/Phase 1/bin/simpledb/metadata/TableMgr.class
+new file mode 100644
+index 0000000..9c47b31
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/TableMgr.class differ
+diff --git a/Phase 1/bin/simpledb/metadata/ViewMgr.class b/Phase 1/bin/simpledb/metadata/ViewMgr.class
+new file mode 100644
+index 0000000..abeb9ae
+Binary files /dev/null and b/Phase 1/bin/simpledb/metadata/ViewMgr.class differ
+diff --git a/Phase 1/bin/simpledb/multibuffer/BufferNeeds.class b/Phase 1/bin/simpledb/multibuffer/BufferNeeds.class
+new file mode 100644
+index 0000000..d1da328
+Binary files /dev/null and b/Phase 1/bin/simpledb/multibuffer/BufferNeeds.class differ
+diff --git a/Phase 1/bin/simpledb/multibuffer/ChunkScan.class b/Phase 1/bin/simpledb/multibuffer/ChunkScan.class
+new file mode 100644
+index 0000000..3573658
+Binary files /dev/null and b/Phase 1/bin/simpledb/multibuffer/ChunkScan.class differ
+diff --git a/Phase 1/bin/simpledb/multibuffer/MultiBufferProductPlan.class b/Phase 1/bin/simpledb/multibuffer/MultiBufferProductPlan.class
+new file mode 100644
+index 0000000..1f2756a
+Binary files /dev/null and b/Phase 1/bin/simpledb/multibuffer/MultiBufferProductPlan.class differ
+diff --git a/Phase 1/bin/simpledb/multibuffer/MultiBufferProductScan.class b/Phase 1/bin/simpledb/multibuffer/MultiBufferProductScan.class
+new file mode 100644
+index 0000000..630bf0f
+Binary files /dev/null and b/Phase 1/bin/simpledb/multibuffer/MultiBufferProductScan.class differ
+diff --git a/Phase 1/bin/simpledb/opt/HeuristicQueryPlanner.class b/Phase 1/bin/simpledb/opt/HeuristicQueryPlanner.class
+new file mode 100644
+index 0000000..7c6d112
+Binary files /dev/null and b/Phase 1/bin/simpledb/opt/HeuristicQueryPlanner.class differ
+diff --git a/Phase 1/bin/simpledb/opt/TablePlanner.class b/Phase 1/bin/simpledb/opt/TablePlanner.class
+new file mode 100644
+index 0000000..283d7d2
+Binary files /dev/null and b/Phase 1/bin/simpledb/opt/TablePlanner.class differ
+diff --git a/Phase 1/bin/simpledb/parse/BadSyntaxException.class b/Phase 1/bin/simpledb/parse/BadSyntaxException.class
+new file mode 100644
+index 0000000..7d42af1
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/BadSyntaxException.class differ
+diff --git a/Phase 1/bin/simpledb/parse/CreateIndexData.class b/Phase 1/bin/simpledb/parse/CreateIndexData.class
+new file mode 100644
+index 0000000..d015124
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/CreateIndexData.class differ
+diff --git a/Phase 1/bin/simpledb/parse/CreateTableData.class b/Phase 1/bin/simpledb/parse/CreateTableData.class
+new file mode 100644
+index 0000000..6e47fb6
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/CreateTableData.class differ
+diff --git a/Phase 1/bin/simpledb/parse/CreateViewData.class b/Phase 1/bin/simpledb/parse/CreateViewData.class
+new file mode 100644
+index 0000000..9b1e408
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/CreateViewData.class differ
+diff --git a/Phase 1/bin/simpledb/parse/DeleteData.class b/Phase 1/bin/simpledb/parse/DeleteData.class
+new file mode 100644
+index 0000000..f6e956e
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/DeleteData.class differ
+diff --git a/Phase 1/bin/simpledb/parse/InsertData.class b/Phase 1/bin/simpledb/parse/InsertData.class
+new file mode 100644
+index 0000000..cdff828
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/InsertData.class differ
+diff --git a/Phase 1/bin/simpledb/parse/Lexer.class b/Phase 1/bin/simpledb/parse/Lexer.class
+new file mode 100644
+index 0000000..3c56070
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/Lexer.class differ
+diff --git a/Phase 1/bin/simpledb/parse/ModifyData.class b/Phase 1/bin/simpledb/parse/ModifyData.class
+new file mode 100644
+index 0000000..fbf1026
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/ModifyData.class differ
+diff --git a/Phase 1/bin/simpledb/parse/Parser.class b/Phase 1/bin/simpledb/parse/Parser.class
+new file mode 100644
+index 0000000..e1e3322
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/Parser.class differ
+diff --git a/Phase 1/bin/simpledb/parse/QueryData.class b/Phase 1/bin/simpledb/parse/QueryData.class
+new file mode 100644
+index 0000000..5892cec
+Binary files /dev/null and b/Phase 1/bin/simpledb/parse/QueryData.class differ
+diff --git a/Phase 1/bin/simpledb/planner/BasicQueryPlanner.class b/Phase 1/bin/simpledb/planner/BasicQueryPlanner.class
+new file mode 100644
+index 0000000..9bad6e0
+Binary files /dev/null and b/Phase 1/bin/simpledb/planner/BasicQueryPlanner.class differ
+diff --git a/Phase 1/bin/simpledb/planner/BasicUpdatePlanner.class b/Phase 1/bin/simpledb/planner/BasicUpdatePlanner.class
+new file mode 100644
+index 0000000..e7ce20a
+Binary files /dev/null and b/Phase 1/bin/simpledb/planner/BasicUpdatePlanner.class differ
+diff --git a/Phase 1/bin/simpledb/planner/Planner.class b/Phase 1/bin/simpledb/planner/Planner.class
+new file mode 100644
+index 0000000..f8886e8
+Binary files /dev/null and b/Phase 1/bin/simpledb/planner/Planner.class differ
+diff --git a/Phase 1/bin/simpledb/planner/QueryPlanner.class b/Phase 1/bin/simpledb/planner/QueryPlanner.class
+new file mode 100644
+index 0000000..58f5698
+Binary files /dev/null and b/Phase 1/bin/simpledb/planner/QueryPlanner.class differ
+diff --git a/Phase 1/bin/simpledb/planner/UpdatePlanner.class b/Phase 1/bin/simpledb/planner/UpdatePlanner.class
+new file mode 100644
+index 0000000..e562b92
+Binary files /dev/null and b/Phase 1/bin/simpledb/planner/UpdatePlanner.class differ
+diff --git a/Phase 1/bin/simpledb/query/Constant.class b/Phase 1/bin/simpledb/query/Constant.class
+new file mode 100644
+index 0000000..af174c7
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/Constant.class differ
+diff --git a/Phase 1/bin/simpledb/query/ConstantExpression.class b/Phase 1/bin/simpledb/query/ConstantExpression.class
+new file mode 100644
+index 0000000..e519f38
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/ConstantExpression.class differ
+diff --git a/Phase 1/bin/simpledb/query/Expression.class b/Phase 1/bin/simpledb/query/Expression.class
+new file mode 100644
+index 0000000..a47eceb
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/Expression.class differ
+diff --git a/Phase 1/bin/simpledb/query/FieldNameExpression.class b/Phase 1/bin/simpledb/query/FieldNameExpression.class
+new file mode 100644
+index 0000000..87f302f
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/FieldNameExpression.class differ
+diff --git a/Phase 1/bin/simpledb/query/IntConstant.class b/Phase 1/bin/simpledb/query/IntConstant.class
+new file mode 100644
+index 0000000..96e2bcb
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/IntConstant.class differ
+diff --git a/Phase 1/bin/simpledb/query/Plan.class b/Phase 1/bin/simpledb/query/Plan.class
+new file mode 100644
+index 0000000..122acae
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/Plan.class differ
+diff --git a/Phase 1/bin/simpledb/query/Predicate.class b/Phase 1/bin/simpledb/query/Predicate.class
+new file mode 100644
+index 0000000..7bd99ec
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/Predicate.class differ
+diff --git a/Phase 1/bin/simpledb/query/ProductPlan.class b/Phase 1/bin/simpledb/query/ProductPlan.class
+new file mode 100644
+index 0000000..97c39ba
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/ProductPlan.class differ
+diff --git a/Phase 1/bin/simpledb/query/ProductScan.class b/Phase 1/bin/simpledb/query/ProductScan.class
+new file mode 100644
+index 0000000..e16ae57
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/ProductScan.class differ
+diff --git a/Phase 1/bin/simpledb/query/ProjectPlan.class b/Phase 1/bin/simpledb/query/ProjectPlan.class
+new file mode 100644
+index 0000000..67161e3
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/ProjectPlan.class differ
+diff --git a/Phase 1/bin/simpledb/query/ProjectScan.class b/Phase 1/bin/simpledb/query/ProjectScan.class
+new file mode 100644
+index 0000000..b7eb373
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/ProjectScan.class differ
+diff --git a/Phase 1/bin/simpledb/query/Scan.class b/Phase 1/bin/simpledb/query/Scan.class
+new file mode 100644
+index 0000000..8b4067d
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/Scan.class differ
+diff --git a/Phase 1/bin/simpledb/query/SelectPlan.class b/Phase 1/bin/simpledb/query/SelectPlan.class
+new file mode 100644
+index 0000000..7a492e8
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/SelectPlan.class differ
+diff --git a/Phase 1/bin/simpledb/query/SelectScan.class b/Phase 1/bin/simpledb/query/SelectScan.class
+new file mode 100644
+index 0000000..d1de2ea
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/SelectScan.class differ
+diff --git a/Phase 1/bin/simpledb/query/StringConstant.class b/Phase 1/bin/simpledb/query/StringConstant.class
+new file mode 100644
+index 0000000..ec9a457
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/StringConstant.class differ
+diff --git a/Phase 1/bin/simpledb/query/TablePlan.class b/Phase 1/bin/simpledb/query/TablePlan.class
+new file mode 100644
+index 0000000..447b110
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/TablePlan.class differ
+diff --git a/Phase 1/bin/simpledb/query/TableScan.class b/Phase 1/bin/simpledb/query/TableScan.class
+new file mode 100644
+index 0000000..ec48048
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/TableScan.class differ
+diff --git a/Phase 1/bin/simpledb/query/Term.class b/Phase 1/bin/simpledb/query/Term.class
+new file mode 100644
+index 0000000..7a5aa42
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/Term.class differ
+diff --git a/Phase 1/bin/simpledb/query/UpdateScan.class b/Phase 1/bin/simpledb/query/UpdateScan.class
+new file mode 100644
+index 0000000..2daa1a6
+Binary files /dev/null and b/Phase 1/bin/simpledb/query/UpdateScan.class differ
+diff --git a/Phase 1/bin/simpledb/record/RID.class b/Phase 1/bin/simpledb/record/RID.class
+new file mode 100644
+index 0000000..7a48075
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/RID.class differ
+diff --git a/Phase 1/bin/simpledb/record/RecordFile.class b/Phase 1/bin/simpledb/record/RecordFile.class
+new file mode 100644
+index 0000000..4ee645b
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/RecordFile.class differ
+diff --git a/Phase 1/bin/simpledb/record/RecordFormatter.class b/Phase 1/bin/simpledb/record/RecordFormatter.class
+new file mode 100644
+index 0000000..9f7501a
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/RecordFormatter.class differ
+diff --git a/Phase 1/bin/simpledb/record/RecordPage.class b/Phase 1/bin/simpledb/record/RecordPage.class
+new file mode 100644
+index 0000000..723c7df
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/RecordPage.class differ
+diff --git a/Phase 1/bin/simpledb/record/Schema$FieldInfo.class b/Phase 1/bin/simpledb/record/Schema$FieldInfo.class
+new file mode 100644
+index 0000000..cfb6213
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/Schema$FieldInfo.class differ
+diff --git a/Phase 1/bin/simpledb/record/Schema.class b/Phase 1/bin/simpledb/record/Schema.class
+new file mode 100644
+index 0000000..274b5d0
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/Schema.class differ
+diff --git a/Phase 1/bin/simpledb/record/TableInfo.class b/Phase 1/bin/simpledb/record/TableInfo.class
+new file mode 100644
+index 0000000..2b5defc
+Binary files /dev/null and b/Phase 1/bin/simpledb/record/TableInfo.class differ
+diff --git a/Phase 1/bin/simpledb/remote/ConnectionAdapter.class b/Phase 1/bin/simpledb/remote/ConnectionAdapter.class
+new file mode 100644
+index 0000000..b2480c5
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/ConnectionAdapter.class differ
+diff --git a/Phase 1/bin/simpledb/remote/DriverAdapter.class b/Phase 1/bin/simpledb/remote/DriverAdapter.class
+new file mode 100644
+index 0000000..d670a93
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/DriverAdapter.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteConnection.class b/Phase 1/bin/simpledb/remote/RemoteConnection.class
+new file mode 100644
+index 0000000..980f3b8
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteConnection.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteConnectionImpl.class b/Phase 1/bin/simpledb/remote/RemoteConnectionImpl.class
+new file mode 100644
+index 0000000..53534e0
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteConnectionImpl.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteDriver.class b/Phase 1/bin/simpledb/remote/RemoteDriver.class
+new file mode 100644
+index 0000000..fa115fb
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteDriver.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteDriverImpl.class b/Phase 1/bin/simpledb/remote/RemoteDriverImpl.class
+new file mode 100644
+index 0000000..053f79c
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteDriverImpl.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteMetaData.class b/Phase 1/bin/simpledb/remote/RemoteMetaData.class
+new file mode 100644
+index 0000000..b6bc697
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteMetaData.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteMetaDataImpl.class b/Phase 1/bin/simpledb/remote/RemoteMetaDataImpl.class
+new file mode 100644
+index 0000000..5fd0594
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteMetaDataImpl.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteResultSet.class b/Phase 1/bin/simpledb/remote/RemoteResultSet.class
+new file mode 100644
+index 0000000..39222b1
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteResultSet.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteResultSetImpl.class b/Phase 1/bin/simpledb/remote/RemoteResultSetImpl.class
+new file mode 100644
+index 0000000..435f39b
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteResultSetImpl.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteStatement.class b/Phase 1/bin/simpledb/remote/RemoteStatement.class
+new file mode 100644
+index 0000000..c554e21
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteStatement.class differ
+diff --git a/Phase 1/bin/simpledb/remote/RemoteStatementImpl.class b/Phase 1/bin/simpledb/remote/RemoteStatementImpl.class
+new file mode 100644
+index 0000000..71a5b52
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/RemoteStatementImpl.class differ
+diff --git a/Phase 1/bin/simpledb/remote/ResultSetAdapter.class b/Phase 1/bin/simpledb/remote/ResultSetAdapter.class
+new file mode 100644
+index 0000000..2dd11f7
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/ResultSetAdapter.class differ
+diff --git a/Phase 1/bin/simpledb/remote/ResultSetMetaDataAdapter.class b/Phase 1/bin/simpledb/remote/ResultSetMetaDataAdapter.class
+new file mode 100644
+index 0000000..2c4532d
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/ResultSetMetaDataAdapter.class differ
+diff --git a/Phase 1/bin/simpledb/remote/SimpleConnection.class b/Phase 1/bin/simpledb/remote/SimpleConnection.class
+new file mode 100644
+index 0000000..fd951f7
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/SimpleConnection.class differ
+diff --git a/Phase 1/bin/simpledb/remote/SimpleDriver.class b/Phase 1/bin/simpledb/remote/SimpleDriver.class
+new file mode 100644
+index 0000000..17403df
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/SimpleDriver.class differ
+diff --git a/Phase 1/bin/simpledb/remote/SimpleMetaData.class b/Phase 1/bin/simpledb/remote/SimpleMetaData.class
+new file mode 100644
+index 0000000..7c07959
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/SimpleMetaData.class differ
+diff --git a/Phase 1/bin/simpledb/remote/SimpleResultSet.class b/Phase 1/bin/simpledb/remote/SimpleResultSet.class
+new file mode 100644
+index 0000000..ffc21b8
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/SimpleResultSet.class differ
+diff --git a/Phase 1/bin/simpledb/remote/SimpleStatement.class b/Phase 1/bin/simpledb/remote/SimpleStatement.class
+new file mode 100644
+index 0000000..8199a4e
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/SimpleStatement.class differ
+diff --git a/Phase 1/bin/simpledb/remote/StatementAdapter.class b/Phase 1/bin/simpledb/remote/StatementAdapter.class
+new file mode 100644
+index 0000000..49868e0
+Binary files /dev/null and b/Phase 1/bin/simpledb/remote/StatementAdapter.class differ
+diff --git a/Phase 1/bin/simpledb/server/SimpleDB.class b/Phase 1/bin/simpledb/server/SimpleDB.class
+new file mode 100644
+index 0000000..2312599
+Binary files /dev/null and b/Phase 1/bin/simpledb/server/SimpleDB.class differ
+diff --git a/Phase 1/bin/simpledb/server/Startup.class b/Phase 1/bin/simpledb/server/Startup.class
+new file mode 100644
+index 0000000..baa296f
+Binary files /dev/null and b/Phase 1/bin/simpledb/server/Startup.class differ
+diff --git a/Phase 1/bin/simpledb/tx/BufferList.class b/Phase 1/bin/simpledb/tx/BufferList.class
+new file mode 100644
+index 0000000..2bf42db
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/BufferList.class differ
+diff --git a/Phase 1/bin/simpledb/tx/Transaction.class b/Phase 1/bin/simpledb/tx/Transaction.class
+new file mode 100644
+index 0000000..8780ff0
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/Transaction.class differ
+diff --git a/Phase 1/bin/simpledb/tx/concurrency/ConcurrencyMgr.class b/Phase 1/bin/simpledb/tx/concurrency/ConcurrencyMgr.class
+new file mode 100644
+index 0000000..e0d0ff4
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/concurrency/ConcurrencyMgr.class differ
+diff --git a/Phase 1/bin/simpledb/tx/concurrency/LockAbortException.class b/Phase 1/bin/simpledb/tx/concurrency/LockAbortException.class
+new file mode 100644
+index 0000000..f33c6d2
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/concurrency/LockAbortException.class differ
+diff --git a/Phase 1/bin/simpledb/tx/concurrency/LockTable.class b/Phase 1/bin/simpledb/tx/concurrency/LockTable.class
+new file mode 100644
+index 0000000..38c8eb9
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/concurrency/LockTable.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/CheckpointRecord.class b/Phase 1/bin/simpledb/tx/recovery/CheckpointRecord.class
+new file mode 100644
+index 0000000..8ad7a21
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/CheckpointRecord.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/CommitRecord.class b/Phase 1/bin/simpledb/tx/recovery/CommitRecord.class
+new file mode 100644
+index 0000000..bc36ccf
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/CommitRecord.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/LogRecord.class b/Phase 1/bin/simpledb/tx/recovery/LogRecord.class
+new file mode 100644
+index 0000000..ca9d89d
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/LogRecord.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/LogRecordIterator.class b/Phase 1/bin/simpledb/tx/recovery/LogRecordIterator.class
+new file mode 100644
+index 0000000..c6f1a50
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/LogRecordIterator.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/RecoveryMgr.class b/Phase 1/bin/simpledb/tx/recovery/RecoveryMgr.class
+new file mode 100644
+index 0000000..cb4cc77
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/RecoveryMgr.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/RollbackRecord.class b/Phase 1/bin/simpledb/tx/recovery/RollbackRecord.class
+new file mode 100644
+index 0000000..7952ae0
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/RollbackRecord.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/SetIntRecord.class b/Phase 1/bin/simpledb/tx/recovery/SetIntRecord.class
+new file mode 100644
+index 0000000..a43bf0b
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/SetIntRecord.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/SetStringRecord.class b/Phase 1/bin/simpledb/tx/recovery/SetStringRecord.class
+new file mode 100644
+index 0000000..f947b5d
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/SetStringRecord.class differ
+diff --git a/Phase 1/bin/simpledb/tx/recovery/StartRecord.class b/Phase 1/bin/simpledb/tx/recovery/StartRecord.class
+new file mode 100644
+index 0000000..67f1111
+Binary files /dev/null and b/Phase 1/bin/simpledb/tx/recovery/StartRecord.class differ
+diff --git a/Phase 1/src/simpledb/buffer/AdvBufferMgr.java b/Phase 1/src/simpledb/buffer/AdvBufferMgr.java
+index 29f4e02..3ee84b9 100644
+--- a/Phase 1/src/simpledb/buffer/AdvBufferMgr.java	
++++ b/Phase 1/src/simpledb/buffer/AdvBufferMgr.java	
+@@ -12,9 +12,13 @@ import java.util.LinkedList;
+  *
+  */
+ class AdvBufferMgr {
++   //CS4432-Project1:hash map to hold the buffer pool
+    private Map<Integer, Buffer> bufferpool;
+-	private Map<Buffer, Integer> reversedPool;
+-	private Map<Block, Integer> blockLocations;
++   //CS4432-Project1:reversed hashmap of buffer pool for ease of use
++   private Map<Buffer, Integer> reversedPool;
++   //CS4432-Project1:map that holds the block and integer that correlates to the buffer
++   private Map<Block, Integer> blockLocations;
++   //CS4432-Project1:linked list of all of the empty buffers that are available for use
+    private LinkedList<Integer> emptyBuffers;
+    private int numAvailable;
+ 
+@@ -32,12 +36,16 @@ class AdvBufferMgr {
+     * @param numbuffs the number of buffer slots to allocate
+     */
+    AdvBufferMgr(int numbuffs) {
++   	//CS4432-Project1:creation of bufferpool and reversedpool
+       bufferpool = new HashMap<Integer, Buffer>();
+       reversedPool = new HashMap<Buffer, Integer>();
+       blockLocations = new HashMap<Block, Integer>();
+       emptyBuffers = new LinkedList<Integer>();
++      //CS4432-Project1:set number of buffers to be numAvailable
+       numAvailable = numbuffs;
++      //CS4432-Project1:creation of buffer
+       Buffer buffer;
++      //CS4432-Project1:for loop to go through # of buffers and create new buffer for each then add to both pools and the empty list
+       for (int i=0; i<numbuffs; i++) {
+          buffer = new Buffer();
+          bufferpool.put(i, buffer);
+@@ -52,6 +60,7 @@ class AdvBufferMgr {
+     */
+    synchronized void flushAll(int txnum) {
+       Buffer buff;
++      //CS4432-Project1:loops through buffer pool getting each one and checking if modified (dirty bit) and flushes if so
+       for (int i = 0; i < bufferpool.size(); i++) {
+          buff = bufferpool.get(i);
+          if (buff.isModifiedBy(txnum))
+@@ -69,18 +78,25 @@ class AdvBufferMgr {
+     * @return the pinned buffer
+     */
+    synchronized Buffer pin(Block blk) {
++   	//CS4432-Project1:using the blocks finds an existing buffer
+       Buffer buff = findExistingBuffer(blk);
++      //CS4432-Project1:if the buffer is null finds/chooses an unpinned buffer
+       if (buff == null) {
+          buff = chooseUnpinnedBuffer();
+          if (buff == null)
+             return null;
+          int i = reversedPool.get(buff);
++         //CS4432-Project1:puts blk in map to keep track of it
+          blockLocations.put(blk, i);
++         //CS4432-Project1:assign the block to the buffer
+          buff.assignToBlock(blk);
+-         buff.setTime(System.currentTimeMillis());
+       }
++      //CS4432-Project1:if buffer is not pinned subtract num available
+       if (!buff.isPinned())
+          numAvailable--;
++      //CS4432-Project1:set time to be used later with LRU
++      buff.setTime(System.currentTimeMillis());
++      // CS4432-Project1:pin buffer then return
+       buff.pin();
+       return buff;
+    }
+@@ -95,15 +111,19 @@ class AdvBufferMgr {
+     * @return the pinned buffer
+     */
+    synchronized Buffer pinNew(String filename, PageFormatter fmtr) {
++   	//CS4432-Project1:use the function chooseUnpinnedBuffer to find buffer to pin
+       Buffer buff = chooseUnpinnedBuffer();
+       if (buff == null)
+          return null;
+-      
++      //CS4432-Project1:assign blk
+       Block blk = buff.assignToNew(filename, fmtr);
++      //CS4432-Project1:get the buffer based on the int with reversedpool
+       int i = reversedPool.get(buff);
++      //CS4432-Project1:put blk, with int, into block hash map
+       blockLocations.put(blk, i);
++      //CS4432-Project1:set time again for LRU use
+       buff.setTime(System.currentTimeMillis());
+-      
++      //CS4432-Project1:pin buff
+       numAvailable--;
+       buff.pin();
+       return buff;
+@@ -114,10 +134,14 @@ class AdvBufferMgr {
+     * @param buff the buffer to be unpinned
+     */
+    synchronized void unpin(Buffer buff) {
++   	//CS4432-Project1:unpin buffer
+       buff.unpin();
+       int i = reversedPool.get(buff);
+       if (!buff.isPinned())
+          numAvailable++;
++
++      //set time to be used later with LRU
++      buff.setTime(System.currentTimeMillis());
+    }
+    
+    /**
+@@ -129,7 +153,7 @@ class AdvBufferMgr {
+    }
+    
+    private Buffer findExistingBuffer(Block blk) {
+-   	//i think we need an if here to deal with if the blk isn't in buff pool
++   	//CS4432-Project1:if block map contains the blk then return the buffer it is attached to else return null
+ 	   if (blockLocations.containsKey(blk)) {
+ 		   return bufferpool.get(blockLocations.get(blk));
+ 	   }
+@@ -137,16 +161,19 @@ class AdvBufferMgr {
+    }
+    
+    private Buffer findEmptyBuffer() {
++   	//CS4432-Project1:if the empty buffer list is empty return null
+       if (emptyBuffers.isEmpty())
+    	    return null;
+       else
++      	//CS4432-Project1:otherwise return the first of the empty buffer list and pops it
+          return bufferpool.get(emptyBuffers.pop());
+ 	   }
+ 	   
+    private Buffer LRUFinder(){
++   	//CS4432-Project1:get the time the first of the bufferpool, and get the first buffer
+    	    long lruTimes = bufferpool.get(0).getTime();
+    	    Buffer lruBuffer = bufferpool.get(0);
+-	
++	//CS4432-Project1:loop through bufferpool and check for times, updating lruTimes and lruBuffer as you find lru
+ 	   for (int i = 0; i < bufferpool.size(); i++)
+ 	   {
+ 		   Buffer buff = bufferpool.get(i);
+@@ -157,26 +184,31 @@ class AdvBufferMgr {
+ 			   lruBuffer = buff;
+ 		   }
+ 	   }
++	   //CS4432-Project1:return lrubuffer, we found it!
+ 	   return lruBuffer;
+    }
+ 
+    private Buffer chooseUnpinnedBuffer() {
++      //CS4432-Project1:use the findEmptyBuffer function, if the buffer is null return that buffer
+       Buffer buff = findEmptyBuffer();
+       if (buff != null){
+ 	      return buff;
+       }
+-      //add lru here and return the lru buffer, have to remove from maps also?
++      //CS4432-Project1:return the lru buffer
+ 	   Buffer LRUChoice = LRUFinder();
+-	   //line to clear the block, decided we don't need but i'll leave it here in case
+-	   //blockLocations.remove(LRUChoice.block());
++	   //CS4432-Project1:line to clear the block, decided we don't need but i'll leave it here in case
++	   //CS4432-Project1:blockLocations.remove(LRUChoice.block());
++	   //CS4432-Project1:return the lru!
+ 	   return LRUChoice;
+    }
+ 
+    @Override
+    public String toString(){
++   	  //CS4432-Project1:to String function for advanced buffer manager,
+       String str = "Advanced Buffer Manager: \n";
++      // CS4432-Project1:for loop to go through bufferpool
+       for (int i = 0; i < bufferpool.size(); i++){
+-         str += "Buffer #" + i + ": " + bufferpool.get(i).toString();
++         str += "Buffer #" + i + ": " + bufferpool.get(i).toString() + "\n";
+       }
+       return str;
+    }
+diff --git a/Phase 1/src/simpledb/buffer/Buffer.java b/Phase 1/src/simpledb/buffer/Buffer.java
+index c001fe8..8f8e040 100644
+--- a/Phase 1/src/simpledb/buffer/Buffer.java	
++++ b/Phase 1/src/simpledb/buffer/Buffer.java	
+@@ -3,6 +3,8 @@ package simpledb.buffer;
+ import simpledb.server.SimpleDB;
+ import simpledb.file.*;
+ 
++import java.util.UUID;
++
+ /**
+  * An individual buffer.
+  * A buffer wraps a page and stores information about its status,
+@@ -19,7 +21,10 @@ public class Buffer {
+    private int pins = 0;
+    private int modifiedBy = -1;  // negative means not modified
+    private int logSequenceNumber = -1; // negative means no corresponding log record
++   //CS4432-Project1: added time to keep track of LRU
+    private long time = -1;
++   //CS4432-Project1: added UUDI for hashcode that is consistent even if buffer gets modified
++   private UUID id;
+ 
+    /**
+     * Creates a new buffer, wrapping a new 
+@@ -35,8 +40,10 @@ public class Buffer {
+     * {@link simpledb.server.SimpleDB#initFileAndLogMgr(String)} or
+     * is called first.
+     */
+-   public Buffer() {}
+-   
++   public Buffer() {
++      this.id = UUID.randomUUID();
++   }
++
+    /**
+     * Returns the integer value at the specified offset of the
+     * buffer's page.
+@@ -190,14 +197,21 @@ public class Buffer {
+       return blk;
+    }
+ 
++   //CS4432-Project1: overrided the toString function
+    @Override
+    public String toString(){
+       return "Block in buffer: " + blk.toString() + ", pinned: " + pins;
+    }
+ 
++   //CS4432-Project1: overrided the hashcode function
++   @Override
++   public int hashCode(){
++      return id.hashCode();
++   }
++
+ 
+ 
+-   //made getter and setter for new time variable to be used with LRU
++   //CS4432-Project1:made getter and setter for new time variable to be used with LRU
+ 	public long getTime(){
+    	    return time;
+ 	}
+diff --git a/Phase 1/src/simpledb/buffer/BufferMgr.java b/Phase 1/src/simpledb/buffer/BufferMgr.java
+index 3d79ce2..488d452 100644
+--- a/Phase 1/src/simpledb/buffer/BufferMgr.java	
++++ b/Phase 1/src/simpledb/buffer/BufferMgr.java	
+@@ -4,7 +4,7 @@ import simpledb.file.*;
+ 
+ /**
+  * The publicly-accessible buffer manager.
+- * A buffer manager wraps a basic buffer manager, and
++ * A buffer manager wraps an advanced buffer manager, and
+  * provides the same methods. The difference is that
+  * the methods {@link #pin(Block) pin} and 
+  * {@link #pinNew(String, PageFormatter) pinNew}
+diff --git a/Phase 1/src/simpledb/buffer/NewBufferMgr.java b/Phase 1/src/simpledb/buffer/NewBufferMgr.java
+deleted file mode 100644
+index 41a266e..0000000
+--- a/Phase 1/src/simpledb/buffer/NewBufferMgr.java	
++++ /dev/null
+@@ -1,130 +0,0 @@
+-package simpledb.buffer;
+-
+-import simpledb.file.Block;
+-import simpledb.file.FileMgr;
+-
+-/**
+- * The publicly-accessible buffer manager.
+- * A buffer manager wraps a basic buffer manager, and
+- * provides the same methods. The difference is that
+- * the methods {@link #pin(Block) pin} and 
+- * {@link #pinNew(String, PageFormatter) pinNew}
+- * will never return null.
+- * If no buffers are currently available, then the
+- * calling thread will be placed on a waiting list.
+- * The waiting threads are removed from the list when 
+- * a buffer becomes available.
+- * If a thread has been waiting for a buffer for an
+- * excessive amount of time (currently, 10 seconds)
+- * then a {@link BufferAbortException} is thrown.
+- * @author Edward Sciore
+- */
+-public class NewBufferMgr {
+-   private static final long MAX_TIME = 10000; // 10 seconds
+-   private AdvBufferMgr bufferMgr;
+-
+-   /**
+-    * Creates a new buffer manager having the specified
+-    * number of buffers.
+-    * This constructor depends on both the {@link FileMgr} and
+-    * {@link simpledb.log.LogMgr LogMgr} objects
+-    * that it gets from the class
+-    * {@link simpledb.server.SimpleDB}.
+-    * Those objects are created during system initialization.
+-    * Thus this constructor cannot be called until
+-    * {@link simpledb.server.SimpleDB#initFileAndLogMgr(String)} or
+-    * is called first.
+-    * @param numbuffers the number of buffer slots to allocate
+-    */
+-   public NewBufferMgr(int numbuffers) {
+-      bufferMgr = new AdvBufferMgr(numbuffers);
+-   }
+-   
+-   /**
+-    * Pins a buffer to the specified block, potentially
+-    * waiting until a buffer becomes available.
+-    * If no buffer becomes available within a fixed 
+-    * time period, then a {@link BufferAbortException} is thrown.
+-    * @param blk a reference to a disk block
+-    * @return the buffer pinned to that block
+-    */
+-   public synchronized Buffer pin(Block blk) {
+-      try {
+-         long timestamp = System.currentTimeMillis();
+-         Buffer buff = bufferMgr.pin(blk);
+-         while (buff == null && !waitingTooLong(timestamp)) {
+-            wait(MAX_TIME);
+-            buff = bufferMgr.pin(blk);
+-         }
+-         if (buff == null)
+-            throw new BufferAbortException();
+-         return buff;
+-      }
+-      catch(InterruptedException e) {
+-         throw new BufferAbortException();
+-      }
+-   }
+-   
+-   /**
+-    * Pins a buffer to a new block in the specified file, 
+-    * potentially waiting until a buffer becomes available.
+-    * If no buffer becomes available within a fixed 
+-    * time period, then a {@link BufferAbortException} is thrown.
+-    * @param filename the name of the file
+-    * @param fmtr the formatter used to initialize the page
+-    * @return the buffer pinned to that block
+-    */
+-   public synchronized Buffer pinNew(String filename, PageFormatter fmtr) {
+-      try {
+-         long timestamp = System.currentTimeMillis();
+-         Buffer buff = bufferMgr.pinNew(filename, fmtr);
+-         while (buff == null && !waitingTooLong(timestamp)) {
+-            wait(MAX_TIME);
+-            buff = bufferMgr.pinNew(filename, fmtr);
+-         }
+-         if (buff == null)
+-            throw new BufferAbortException();
+-         return buff;
+-      }
+-      catch(InterruptedException e) {
+-         throw new BufferAbortException();
+-      }
+-   }
+-   
+-   /**
+-    * Unpins the specified buffer. 
+-    * If the buffer's pin count becomes 0,
+-    * then the threads on the wait list are notified.
+-    * @param buff the buffer to be unpinned
+-    */
+-   public synchronized void unpin(Buffer buff) {
+-      bufferMgr.unpin(buff);
+-      if (!buff.isPinned())
+-         notifyAll();
+-   }
+-   
+-   /**
+-    * Flushes the dirty buffers modified by the specified transaction.
+-    * @param txnum the transaction's id number
+-    */
+-   public void flushAll(int txnum) {
+-      bufferMgr.flushAll(txnum);
+-   }
+-   
+-   /**
+-    * Returns the number of available (ie unpinned) buffers.
+-    * @return the number of available buffers
+-    */
+-   public int available() {
+-      return bufferMgr.available();
+-   }
+-   
+-   private boolean waitingTooLong(long starttime) {
+-      return System.currentTimeMillis() - starttime > MAX_TIME;
+-   }
+-
+-   @Override
+-   public String toString(){
+-      return "Buffer Manager: \n " + bufferMgr.toString();
+-   }
+-}
+diff --git a/Phase 1/src/simpledb/file/Block.java b/Phase 1/src/simpledb/file/Block.java
+index 1435f14..b86da80 100644
+--- a/Phase 1/src/simpledb/file/Block.java	
++++ b/Phase 1/src/simpledb/file/Block.java	
+@@ -42,11 +42,11 @@ public class Block {
+       Block blk = (Block) obj;
+       return filename.equals(blk.filename) && blknum == blk.blknum;
+    }
+-   
++   //CS4432-Project1: overrided the toString function
+    public String toString() {
+       return "[file " + filename + ", block " + blknum + "]";
+    }
+-   
++   //CS4432-Project1: overrided the hashcode function
+    public int hashCode() {
+       return toString().hashCode();
+    }
+diff --git a/Phase 1/src/simpledb/file/Page.java b/Phase 1/src/simpledb/file/Page.java
+index d587653..f21bf93 100644
+--- a/Phase 1/src/simpledb/file/Page.java	
++++ b/Phase 1/src/simpledb/file/Page.java	
+@@ -42,6 +42,7 @@ public class Page {
+     * to create and test databases having a lot of blocks.
+     * A more realistic value would be 4K.
+     */
++   //TODO should we increase this?
+    public static final int BLOCK_SIZE = 400;
+    
+    /**
+diff --git a/Phase 1/src/simpledb/index/hash/ExHashIndex.java b/Phase 1/src/simpledb/index/hash/ExHashIndex.java
+new file mode 100644
+index 0000000..3f1c7b8
+--- /dev/null
++++ b/Phase 1/src/simpledb/index/hash/ExHashIndex.java	
+@@ -0,0 +1,304 @@
++package simpledb.index.hash;
++
++import java.util.*;
++
++//TODO I think we will end up needing to increase the buffer size
++
++import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
++import simpledb.index.Index;
++import simpledb.query.Constant;
++import simpledb.query.TableScan;
++import simpledb.record.RID;
++import simpledb.record.Schema;
++import simpledb.record.TableInfo;
++import simpledb.tx.Transaction;
++
++public class ExHashIndex implements Index
++{
++	//values used for tracking current status and all the hash index info needed
++	protected int cBuckets = 0;
++	protected int cBucketsNum = 0;
++	protected int cBits = 1;
++	protected String idxname;
++	protected Schema sch;
++	protected Transaction tx;
++	protected Constant searchKey = null;
++	protected TableScan tablescan = null;
++	
++	//global and index field names?
++	//TODO do i need more
++	protected final String GBL_FiELD = "gbl";
++	protected final String BCKT_NUM = "bcktnum";
++	protected final String BCKT_BITS = "bcktbits";
++	protected final String BCKT_TUPLES = "bckttuples";
++	protected final String BCKT_FILENAME = "idxfilename";
++	
++	//files for the index
++	protected final String IDX_FILENAME = "exhashindexfile";
++	protected final String GBL_FILENAME = "exhashgblfile";
++	
++	//max num tuples in idx bucket;; idk this is a rando value
++	protected final int NUM_BCKT_TUPLES = 100;
++	
++	//both global and index information
++	protected Schema gblSchema;
++	protected TableInfo gblInfo;
++	protected TableScan gblScan;
++	protected Schema idxBcktSchema;
++	protected TableInfo idxBcktTableInfo;
++	protected TableScan idxBcktTableScan;
++	
++	//TODO determine the hash value for modulo, i didn't know we needed this till i taked to my friend
++	//TODO apparetnly we can choose the value but idkkkkkk, i'm gonna use the value he did for now
++	protected static final int HASH_MOD_VAL = 1610612741;
++	
++	//constructy boi
++	public ExHashIndex(String idxname, Schema sch, Transaction tx){
++		this.idxname = idxname;
++		this.sch = sch;
++		this.tx = tx;
++		//creating the global schema, the global info table, and then scan the table
++		gblSchema = new Schema();
++		//add in the single field
++		gblSchema.addIntField(GBL_FiELD);
++		gblInfo = new TableInfo(GBL_FILENAME, gblSchema);
++		gblScan = new TableScan(gblInfo, tx);
++		gblScan.beforeFirst();
++		gblScan.next();
++		
++		//catch issues with setting the global bit count
++		try{
++			cBits = gblScan.getInt(GBL_FiELD);
++		} catch (Exception e){
++			cBits = 0;
++			System.out.println("gbl bit count issue");
++		}
++		
++		//now that globals are set, setting up the bucket schema for the index
++		idxBcktSchema = new Schema();
++		//add all the fields in as well
++		idxBcktSchema.addIntField(BCKT_NUM);
++		idxBcktSchema.addIntField(BCKT_BITS);
++		idxBcktSchema.addIntField(BCKT_TUPLES);
++		idxBcktSchema.addStringField(BCKT_FILENAME, 10);
++		//TODO fix this if it is not working
++		idxBcktTableInfo = new TableInfo(IDX_FILENAME + BCKT_NUM, idxBcktSchema);
++		idxBcktTableScan = new TableScan(idxBcktTableInfo, tx);
++		idxBcktTableScan.beforeFirst();
++	}
++	
++	@Override
++	//close any table scans from before and reset current bucket number that is being looked at
++	public void beforeFirst(Constant searchkey)
++	{
++		close();
++		this.searchKey = searchkey;
++		//TODO check to make sure this is doing the hash thangs correctly
++		cBucketsNum = searchkey.hashCode()%HASH_MOD_VAL;
++	}
++	
++	@Override
++	public boolean next()
++	{
++		while (tablescan.next()){
++			if( tablescan.getVal("dataval").equals(searchKey)){
++				return true;
++			}
++	}
++		return false;
++	}
++	
++	@Override
++	//from current record in tablescan gets the data RID for the bckt
++	//used based on tablescan and RID classes done for us4
++	public RID getDataRid()
++	{
++		int blocknum = tablescan.getInt("block");
++		int id = tablescan.getInt("id");
++		return new RID(blocknum, id);
++	}
++	
++	public void setGblBits(){
++		gblScan.beforeFirst();
++		while (gblScan.next()){
++			gblScan.delete();
++			gblScan.beforeFirst();
++		}
++		gblScan.insert();
++		gblScan.setInt(GBL_FiELD, cBits);
++	}
++	
++	// takes number of bits to leave unmasked from rightmost bit and Returns a mask for the
++	// number of bits to leave unmasked starting from 2^0
++	//this part was confusing to me so I looked up online other examples of bit masking
++	public int getMaskValue(int bits){
++		int finalsum = 0;
++		for (int i = bits -1; i >= 0; i--){
++			finalsum = finalsum | (int) Math.pow(2,i);
++		}
++		return finalsum;
++	}
++	
++	@Override
++	//for bckt inserts new record into table scan
++	public void insert(Constant dataval, RID datarid)
++	{
++		beforeFirst(dataval);
++		idxBcktTableScan.beforeFirst();
++		
++		//first step is there an existing bucket? lets see
++		while(idxBcktTableScan.next()){
++			//TODO was confused on this part and need to review before submitting
++			//need two values 1.current has val, and bucket val (its bit num)
++			int bcktnummask = idxBcktTableScan.getInt(BCKT_NUM) & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
++			int cbcktnummask = cBucketsNum & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
++			
++			//are these values equal
++			if(bcktnummask == cbcktnummask){
++				//is bckt boutta be full
++				if (idxBcktTableScan.getInt(BCKT_TUPLES) >= NUM_BCKT_TUPLES){
++					//now the hard stuff, need to reorder these bad boys
++					reorderBcktRecords();
++					insert(dataval,datarid);
++					return;
++				} else {
++					//easy one juse insert into a bucket that already exists
++					insertExistingIdxBckt(dataval, datarid);
++					//TODO could use this for printing to make sure everything is inserting correctly
++					return;
++				}
++			}
++		}
++		//new value and new bucket option? & getMask(currentBitCount), currentBitCount);
++		insertNewIdxBckt(dataval, datarid, cBucketsNum & getMaskValue(cBits), cBits);
++		//TODO can do same type of printing down here as well
++	}
++	
++	//reorganizing all the bucket values, big oof
++	//need to increase dir size and put all the values at their new bit values
++	public void reorderBcktRecords(){
++		int oldBcktBits = idxBcktTableScan.getInt(BCKT_BITS);
++		
++		//does the global need to be incremented? increment current and set to global
++		if ((idxBcktTableScan.getInt(BCKT_BITS) + 1) > cBits){
++			cBits++;
++			setGblBits();
++		}
++		
++		//i think we need this to track the displaced bois
++		HashMap<Constant, RID> idkMap = new HashMap<Constant, RID>();
++		List<Constant> idkList = new ArrayList<Constant>();
++		
++		idxBcktTableScan.beforeFirst();
++		while (idxBcktTableScan.next()){
++			
++			//bucket bits greater, so need to increment
++			idxBcktTableScan.setInt(BCKT_BITS, idxBcktTableScan.getInt(BCKT_BITS)+1);
++			
++			//open current bucket file, this one is full and we gonna have to do some work on it
++			String fname = idxBcktTableScan.getString(BCKT_FILENAME);
++			tablescan = getTableFromFName(fname);
++			tablescan.beforeFirst();
++			
++			//lets go through all the records in the file
++			while(tablescan.next())
++			{
++				Constant key = tablescan.getVal("dataval");
++				int bckt = key.hashCode() % HASH_MOD_VAL;
++				
++				//masked values for the record and  and also for new bckt bits
++				int chckbcktnummask = idxBcktTableScan.getInt(BCKT_NUM) & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
++				int bcktnummask = bckt & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
++				
++				//ok so now we increased the bit value but what if a record should be hashed in here
++				//we gotta remove that ish and resort it, so lets add it to our list for now
++				if (bcktnummask != chckbcktnummask)
++				{
++					idkMap.put(key, getDataRid());
++					idkList.add(key);
++					idxBcktTableScan.setInt(BCKT_TUPLES, idxBcktTableScan.getInt(BCKT_TUPLES) - 1);
++					tablescan.delete();
++				}
++			}
++		}
++		
++		for (Constant k : idkList){
++			insert(k, idkMap.get(k));
++		}
++		tablescan.close();
++	}
++	
++	//inserting the record into a bucket that already exists, also increments tuples in bucket
++	public void insertExistingIdxBckt(Constant val, RID rid){
++		idxBcktTableScan.setInt(BCKT_TUPLES, idxBcktTableScan.getInt(BCKT_TUPLES) + 1);
++		tablescan = getTableFromFName(idxBcktTableScan.getString(BCKT_FILENAME));
++		
++		//actually inserting the new value
++		tablescan.beforeFirst();
++		tablescan.insert();
++		tablescan.setInt("block", rid.blockNumber());
++		tablescan.setInt("id", rid.id());
++		tablescan.setVal("dataval", val);
++		tablescan.close();
++	}
++	
++	//new value and new bucket oh boy!
++	public void insertNewIdxBckt(Constant val, RID rid, int maskBcktNum, int bits){
++		//insert the new bucket
++		idxBcktTableScan.insert();
++		idxBcktTableScan.setInt(BCKT_NUM, maskBcktNum);
++		idxBcktTableScan.setInt(BCKT_BITS, bits);
++		idxBcktTableScan.setInt(BCKT_TUPLES, 1);
++		idxBcktTableScan.setString(BCKT_FILENAME, idxname + maskBcktNum);
++		
++		//does global bits need to be incremented, idk lets find out
++		if(bits < cBits){
++			cBits++;
++			setGblBits();
++		}
++		
++		tablescan = getTableFromFName(idxBcktTableScan.getString(BCKT_FILENAME));
++		
++		//actually inserting the new value
++		tablescan.beforeFirst();
++		tablescan.insert();
++		tablescan.setInt("block", rid.blockNumber());
++		tablescan.setInt("id", rid.id());
++		tablescan.setVal("dataval", val);
++		tablescan.close();
++		//end by incrementing
++		cBuckets++;
++	}
++	
++	//gets table scan based on a file name
++	public TableScan getTableFromFName(String fname) {
++		TableInfo tbleinfo = new TableInfo(fname, sch);
++		return new TableScan(tbleinfo, tx);
++	}
++	
++	@Override
++	//if datarid matches deletes the record from the tablescan. starts in scan, loops through until finds the record
++	public void delete(Constant dataval, RID datarid)
++	{
++		beforeFirst(dataval);
++		while (next()){
++			if (getDataRid().equals(datarid)){
++				tablescan.delete();
++				return;
++			}
++		}
++	}
++	
++	@Override
++	//closes index with closing table scan
++	public void close()
++	{
++		if (tablescan != null){
++			tablescan.close();
++		}
++	}
++	
++	//TODO add some print functions for testing??
++	//TODO for index bucket use .next on the tablescan and print out all the fields
++	//TODO print the bit count, bucket count, bucket number, and hash mod for stats?
++}
+diff --git a/Phase 1/src/simpledb/index/planner/IndexUpdatePlanner.java b/Phase 1/src/simpledb/index/planner/IndexUpdatePlanner.java
+index cfc528b..850b706 100644
+--- a/Phase 1/src/simpledb/index/planner/IndexUpdatePlanner.java	
++++ b/Phase 1/src/simpledb/index/planner/IndexUpdatePlanner.java	
+@@ -114,7 +114,7 @@ public class IndexUpdatePlanner implements UpdatePlanner {
+    }
+    
+    public int executeCreateIndex(CreateIndexData data, Transaction tx) {
+-      SimpleDB.mdMgr().createIndex(data.indexName(), data.tableName(), data.fieldName(), tx);
++      SimpleDB.mdMgr().createIndex(data.indexType() ,data.indexName(), data.tableName(), data.fieldName(), tx);
+       return 0;
+    }
+ }
+diff --git a/Phase 1/src/simpledb/metadata/IndexInfo.java b/Phase 1/src/simpledb/metadata/IndexInfo.java
+index 7b599c2..3500e42 100644
+--- a/Phase 1/src/simpledb/metadata/IndexInfo.java	
++++ b/Phase 1/src/simpledb/metadata/IndexInfo.java	
+@@ -2,6 +2,8 @@ package simpledb.metadata;
+ 
+ import static java.sql.Types.INTEGER;
+ import static simpledb.file.Page.BLOCK_SIZE;
++
++import simpledb.index.hash.ExHashIndex;
+ import simpledb.server.SimpleDB;
+ import simpledb.tx.Transaction;
+ import simpledb.record.*;
+@@ -19,22 +21,24 @@ import simpledb.index.btree.BTreeIndex; //in case we change to btree indexing
+  * @author Edward Sciore
+  */
+ public class IndexInfo {
+-   private String idxname, fldname;
++   private String idxtype, idxname, fldname;
+    private Transaction tx;
+    private TableInfo ti;
+    private StatInfo si;
+    
+    /**
+     * Creates an IndexInfo object for the specified index.
++    * @param idxtype the type of the index
+     * @param idxname the name of the index
+     * @param tblname the name of the table
+     * @param fldname the name of the indexed field
+     * @param tx the calling transaction
+     */
+-   public IndexInfo(String idxname, String tblname, String fldname,
++   public IndexInfo(String idxtype, String idxname, String tblname, String fldname,
+                     Transaction tx) {
+       this.idxname = idxname;
+       this.fldname = fldname;
++      this.idxtype = idxtype;
+       this.tx = tx;
+       ti = SimpleDB.mdMgr().getTableInfo(tblname, tx);
+       si = SimpleDB.mdMgr().getStatInfo(tblname, ti, tx);
+@@ -45,9 +49,22 @@ public class IndexInfo {
+     * @return the Index object associated with this information
+     */
+    public Index open() {
++   	System.out.println("Index being created is" + idxtype);
+       Schema sch = schema();
+-      // Create new HashIndex for hash indexing
+-      return new HashIndex(idxname, sch, tx);
++      switch (idxtype)
++      {
++	//CS4432: switch statement to creat three different indexes depending on the type
++	      case "sh":
++		      return new HashIndex(idxname, sch, tx);
++	      case "bt":
++		      return new BTreeIndex(idxname, sch, tx);
++	      case "eh":
++		      return new ExHashIndex(idxname, sch, tx);
++	      default:
++	      	//CS4432: default is a static hash index, though if it gets to this it is an error
++		      System.out.println("Something is wrong with the type");
++		      return new HashIndex(idxname, sch, tx);
++      }
+    }
+    
+    /**
+diff --git a/Phase 1/src/simpledb/metadata/IndexMgr.java b/Phase 1/src/simpledb/metadata/IndexMgr.java
+index 1900d12..3f25540 100644
+--- a/Phase 1/src/simpledb/metadata/IndexMgr.java	
++++ b/Phase 1/src/simpledb/metadata/IndexMgr.java	
+@@ -26,6 +26,7 @@ public class IndexMgr {
+          sch.addStringField("indexname", MAX_NAME);
+          sch.addStringField("tablename", MAX_NAME);
+          sch.addStringField("fieldname", MAX_NAME);
++         sch.addStringField("indextype", MAX_NAME);
+          tblmgr.createTable("idxcat", sch, tx);
+       }
+       ti = tblmgr.getTableInfo("idxcat", tx);
+@@ -35,14 +36,16 @@ public class IndexMgr {
+     * Creates an index of the specified type for the specified field.
+     * A unique ID is assigned to this index, and its information
+     * is stored in the idxcat table.
++    * @param idxtype the type of the index
+     * @param idxname the name of the index
+     * @param tblname the name of the indexed table
+     * @param fldname the name of the indexed field
+     * @param tx the calling transaction
+     */
+-   public void createIndex(String idxname, String tblname, String fldname, Transaction tx) {
++   public void createIndex(IndexType idxtype, String idxname, String tblname, String fldname, Transaction tx) {
+       RecordFile rf = new RecordFile(ti, tx);
+       rf.insert();
++      rf.setString("indextype", idxtype.toString());
+       rf.setString("indexname", idxname);
+       rf.setString("tablename", tblname);
+       rf.setString("fieldname", fldname);
+@@ -63,7 +66,8 @@ public class IndexMgr {
+          if (rf.getString("tablename").equals(tblname)) {
+          String idxname = rf.getString("indexname");
+          String fldname = rf.getString("fieldname");
+-         IndexInfo ii = new IndexInfo(idxname, tblname, fldname, tx);
++         String idxtype = rf.getString("indextype");
++         IndexInfo ii = new IndexInfo(idxtype, idxname, tblname, fldname, tx);
+          result.put(fldname, ii);
+       }
+       rf.close();
+diff --git a/Phase 1/src/simpledb/metadata/IndexType.java b/Phase 1/src/simpledb/metadata/IndexType.java
+new file mode 100644
+index 0000000..428679e
+--- /dev/null
++++ b/Phase 1/src/simpledb/metadata/IndexType.java	
+@@ -0,0 +1,5 @@
++package simpledb.metadata;
++
++public enum IndexType {
++    StaticHashing, BTree, ExtHashing
++}
+diff --git a/Phase 1/src/simpledb/metadata/MetadataMgr.java b/Phase 1/src/simpledb/metadata/MetadataMgr.java
+index e2de571..660856a 100644
+--- a/Phase 1/src/simpledb/metadata/MetadataMgr.java	
++++ b/Phase 1/src/simpledb/metadata/MetadataMgr.java	
+@@ -33,8 +33,8 @@ public class MetadataMgr {
+       return viewmgr.getViewDef(viewname, tx);
+    }
+    
+-   public void createIndex(String idxname, String tblname, String fldname, Transaction tx) {
+-      idxmgr.createIndex(idxname, tblname, fldname, tx);
++   public void createIndex(IndexType indexType, String idxname, String tblname, String fldname, Transaction tx) {
++      idxmgr.createIndex(indexType, idxname, tblname, fldname, tx);
+    }
+    
+    public Map<String,IndexInfo> getIndexInfo(String tblname, Transaction tx) {
+diff --git a/Phase 1/src/simpledb/parse/CreateIndexData.java b/Phase 1/src/simpledb/parse/CreateIndexData.java
+index 1b7cfb9..8fa15ae 100644
+--- a/Phase 1/src/simpledb/parse/CreateIndexData.java	
++++ b/Phase 1/src/simpledb/parse/CreateIndexData.java	
+@@ -1,19 +1,34 @@
+ package simpledb.parse;
+ 
++import simpledb.metadata.IndexType;
++
+ /**
+  * The parser for the <i>create index</i> statement.
+  * @author Edward Sciore
+  */
+ public class CreateIndexData {
+    private String idxname, tblname, fldname;
++   private IndexType type;
+    
+    /**
+     * Saves the table and field names of the specified index.
+     */
+-   public CreateIndexData(String idxname, String tblname, String fldname) {
++   public CreateIndexData(String typeName, String idxname, String tblname, String fldname) {
+       this.idxname = idxname;
+       this.tblname = tblname;
+       this.fldname = fldname;
++      switch(typeName){
++         case "bt":
++            this.type = IndexType.BTree;
++            break;
++         case "eh":
++            this.type = IndexType.ExtHashing;
++            break;
++         //In case the user types sh or an undefined index type, set it to the default static hashing
++         default:
++            this.type = IndexType.StaticHashing;
++            break;
++      }
+    }
+    
+    /**
+@@ -39,5 +54,13 @@ public class CreateIndexData {
+    public String fieldName() {
+       return fldname;
+    }
++
++   /**
++    * Returns the type of the index.
++    * @return the type of the index
++    */
++   public IndexType indexType() {
++      return type;
++   }
+ }
+ 
+diff --git a/Phase 1/src/simpledb/parse/Parser.java b/Phase 1/src/simpledb/parse/Parser.java
+index 2f239d4..046c008 100644
+--- a/Phase 1/src/simpledb/parse/Parser.java	
++++ b/Phase 1/src/simpledb/parse/Parser.java	
+@@ -1,6 +1,8 @@
+ package simpledb.parse;
+ 
+ import java.util.*;
++
++import com.sun.xml.internal.bind.v2.TODO;
+ import simpledb.query.*;
+ import simpledb.record.Schema;
+ 
+@@ -89,6 +91,7 @@ public class Parser {
+ // Methods for parsing the various update commands
+    
+    public Object updateCmd() {
++      System.out.println("Update cmd");
+       if (lex.matchKeyword("insert"))
+          return insert();
+       else if (lex.matchKeyword("delete"))
+@@ -96,17 +99,21 @@ public class Parser {
+       else if (lex.matchKeyword("update"))
+          return modify();
+       else
++         System.out.println("Matched create");
+          return create();
+    }
+    
+    private Object create() {
++      System.out.println("Found create");
+       lex.eatKeyword("create");
+       if (lex.matchKeyword("table"))
+          return createTable();
+       else if (lex.matchKeyword("view"))
+          return createView();
+-      else
++      else if (lex.matchKeyword("sh") || lex.matchKeyword("bt") || lex.matchKeyword("eh"))
+          return createIndex();
++      else
++         return null;
+    }
+    
+ // Method for parsing delete commands
+@@ -232,14 +239,22 @@ public class Parser {
+ //  Method for parsing create index commands
+    
+    public CreateIndexData createIndex() {
++      System.out.println("Starting to create index");
++      String idxtype = lex.eatId();
++      System.out.println("ate type");
+       lex.eatKeyword("index");
++      System.out.println("ate index");
+       String idxname = lex.eatId();
++      System.out.println("ate name");
+       lex.eatKeyword("on");
++      System.out.println("ate on");
+       String tblname = lex.eatId();
++      System.out.println("ate table");
+       lex.eatDelim('(');
+       String fldname = field();
+       lex.eatDelim(')');
+-      return new CreateIndexData(idxname, tblname, fldname);
++      System.out.println("ate field");
++      return new CreateIndexData(idxtype, idxname, tblname, fldname);
+    }
+ }
+ 
+diff --git a/Phase 1/src/simpledb/planner/BasicUpdatePlanner.java b/Phase 1/src/simpledb/planner/BasicUpdatePlanner.java
+index a1c5516..52bb3cf 100644
+--- a/Phase 1/src/simpledb/planner/BasicUpdatePlanner.java	
++++ b/Phase 1/src/simpledb/planner/BasicUpdatePlanner.java	
+@@ -62,7 +62,7 @@ public class BasicUpdatePlanner implements UpdatePlanner {
+       return 0;
+    }
+    public int executeCreateIndex(CreateIndexData data, Transaction tx) {
+-      SimpleDB.mdMgr().createIndex(data.indexName(), data.tableName(), data.fieldName(), tx);
++      SimpleDB.mdMgr().createIndex(data.indexType(), data.indexName(), data.tableName(), data.fieldName(), tx);
+       return 0;  
+    }
+ }
+diff --git a/Phase 1/src/simpledb/server/SimpleDB.java b/Phase 1/src/simpledb/server/SimpleDB.java
+index f0c65b9..2f23e99 100644
+--- a/Phase 1/src/simpledb/server/SimpleDB.java	
++++ b/Phase 1/src/simpledb/server/SimpleDB.java	
+@@ -101,7 +101,7 @@ public class SimpleDB {
+     * @return the system's planner for SQL commands
+     */public static Planner planner() {
+       QueryPlanner  qplanner = new BasicQueryPlanner();
+-      UpdatePlanner uplanner = new BasicUpdatePlanner();
++      UpdatePlanner uplanner = new IndexUpdatePlanner();
+       return new Planner(qplanner, uplanner);
+    }
+ }
+diff --git a/Phase 1/studentClient/simpledb/CreateStudentDB_Indexed.java b/Phase 1/studentClient/simpledb/CreateStudentDB_Indexed.java
+new file mode 100644
+index 0000000..3e3b24e
+--- /dev/null
++++ b/Phase 1/studentClient/simpledb/CreateStudentDB_Indexed.java	
+@@ -0,0 +1,109 @@
++import simpledb.remote.SimpleDriver;
++
++import java.sql.Connection;
++import java.sql.Driver;
++import java.sql.SQLException;
++import java.sql.Statement;
++
++public class CreateStudentDB_Indexed {
++    public static void main(String[] args) {
++		Connection conn = null;
++		try {
++			Driver d = new SimpleDriver();
++			conn = d.connect("jdbc:simpledb://localhost", null);
++			Statement stmt = conn.createStatement();
++
++			String s = "create table STUDENT(SId int, SName varchar(10), MajorId int, GradYear int)";
++			stmt.executeUpdate(s);
++
++			System.out.println("Table STUDENT created.");
++			String si = "create sh index normal_index on STUDENT(SId)";
++			stmt.executeQuery(si);
++
++			System.out.println("Index on STUDENT created.");
++
++			s = "insert into STUDENT(SId, SName, MajorId, GradYear) values ";
++			String[] studvals = {"(1, 'joe', 10, 2004)",
++								 "(2, 'amy', 20, 2004)",
++								 "(3, 'max', 10, 2005)",
++								 "(4, 'sue', 20, 2005)",
++								 "(5, 'bob', 30, 2003)",
++								 "(6, 'kim', 20, 2001)",
++								 "(7, 'art', 30, 2004)",
++								 "(8, 'pat', 20, 2001)",
++								 "(9, 'lee', 10, 2004)"};
++			for (int i=0; i<studvals.length; i++)
++				stmt.executeUpdate(s + studvals[i]);
++			System.out.println("STUDENT records inserted.");
++
++			s = "create table DEPT(DId int, DName varchar(8))";
++			stmt.executeUpdate(s);
++			System.out.println("Table DEPT created.");
++
++			s = "insert into DEPT(DId, DName) values ";
++			String[] deptvals = {"(10, 'compsci')",
++								 "(20, 'math')",
++								 "(30, 'drama')"};
++			for (int i=0; i<deptvals.length; i++)
++				stmt.executeUpdate(s + deptvals[i]);
++			System.out.println("DEPT records inserted.");
++
++			s = "create table COURSE(CId int, Title varchar(20), DeptId int)";
++			stmt.executeUpdate(s);
++			System.out.println("Table COURSE created.");
++
++			s = "insert into COURSE(CId, Title, DeptId) values ";
++			String[] coursevals = {"(12, 'db systems', 10)",
++								   "(22, 'compilers', 10)",
++								   "(32, 'calculus', 20)",
++								   "(42, 'algebra', 20)",
++								   "(52, 'acting', 30)",
++								   "(62, 'elocution', 30)"};
++			for (int i=0; i<coursevals.length; i++)
++				stmt.executeUpdate(s + coursevals[i]);
++			System.out.println("COURSE records inserted.");
++
++			s = "create table SECTION(SectId int, CourseId int, Prof varchar(8), YearOffered int)";
++			stmt.executeUpdate(s);
++			System.out.println("Table SECTION created.");
++
++			s = "insert into SECTION(SectId, CourseId, Prof, YearOffered) values ";
++			String[] sectvals = {"(13, 12, 'turing', 2004)",
++								 "(23, 12, 'turing', 2005)",
++								 "(33, 32, 'newton', 2000)",
++								 "(43, 32, 'einstein', 2001)",
++								 "(53, 62, 'brando', 2001)"};
++			for (int i=0; i<sectvals.length; i++)
++				stmt.executeUpdate(s + sectvals[i]);
++			System.out.println("SECTION records inserted.");
++
++			s = "create table ENROLL(EId int, StudentId int, SectionId int, Grade varchar(2))";
++			stmt.executeUpdate(s);
++			System.out.println("Table ENROLL created.");
++
++			s = "insert into ENROLL(EId, StudentId, SectionId, Grade) values ";
++			String[] enrollvals = {"(14, 1, 13, 'A')",
++								   "(24, 1, 43, 'C' )",
++								   "(34, 2, 43, 'B+')",
++								   "(44, 4, 33, 'B' )",
++								   "(54, 4, 53, 'A' )",
++								   "(64, 6, 53, 'A' )"};
++			for (int i=0; i<enrollvals.length; i++)
++				stmt.executeUpdate(s + enrollvals[i]);
++			System.out.println("ENROLL records inserted.");
++
++		}
++		catch(SQLException e) {
++			e.printStackTrace();
++		}
++		finally {
++			try {
++				if (conn != null)
++					conn.close();
++			}
++			catch (SQLException e) {
++				e.printStackTrace();
++			}
++		}
++	}
++}
+diff --git a/Phase 1/studentClient/simpledb/Examples.java b/Phase 1/studentClient/simpledb/Examples.java
+new file mode 100644
+index 0000000..425c611
+--- /dev/null
++++ b/Phase 1/studentClient/simpledb/Examples.java	
+@@ -0,0 +1,134 @@
++import java.sql.*;
++import simpledb.remote.SimpleDriver;
++
++public class Examples
++{
++	public static void main(String[] args) {
++		Connection conn = null;
++		try {
++			Driver d = new SimpleDriver();
++			conn = d.connect("jdbc:simpledb://localhost", null);
++			Statement stmt = conn.createStatement();
++			ResultSet rs;
++			//times for testing the sql jdbc document
++			//table set up taken directly from CreatStudentDB but with more statements added below
++			long totalStartTime = System.nanoTime();
++			
++			
++			//Variety of testing statements, I will just be printing out the names for the result set for ease of use
++			//and will be checking against inserts done in CreateStudentDB.java
++			//these are a variety of basic queries that simpleDB can handle, and even has an insert halfway through to check insertion while running
++			
++			//statements to check that the above data is correctly in tables
++			String s = "select SId, Sname, MajorId, GradYear from student";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Select from student test \n");
++			while (rs.next()) {
++				String StudentID = rs.getString("SName");
++				System.out.println(StudentID + "\n");
++			}
++			
++			s = "select DId, DName from dept";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Select from dept test \n");
++			while (rs.next()) {
++				String DeptID = rs.getString("DName");
++				System.out.println(DeptID + "\n");
++			}
++			
++			s = "select CId, Title, DeptId from course";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Select from course test \n");
++			while (rs.next()) {
++				String CourseID = rs.getString("Title");
++				System.out.println(CourseID + "\n");
++			}
++			
++			s = "select SectId, CourseId, Prof, YearOffered from section";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Select from section test \n");
++			while (rs.next()) {
++				Integer SectionID = rs.getInt("SectID");
++				System.out.println(SectionID + "\n");
++			}
++			
++			s = "select EId, StudentId, SectionId, Grade from enroll";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Select from enroll test \n");
++			while (rs.next()) {
++				Integer EnrollID = rs.getInt("EID");
++				System.out.println(EnrollID + "\n");
++			}
++			
++			//statements to check conditionals on Student
++			s = "select SId, Sname from student where sid = 3 and majorid = 10";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Conditional1 from student test \n");
++			while (rs.next()) {
++				String StudentID = rs.getString("SName");
++				System.out.println(StudentID + "\n");
++			}
++			
++			s = "select SId, Sname from student where majorid = 10";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Conditional2 from student test \n");
++			while (rs.next()) {
++				String StudentID = rs.getString("SName");
++				System.out.println(StudentID + "\n");
++			}
++			
++			s = "select Sid, Sname from student where gradyear = 2005 and sname = 'sue'";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Conditional3 from student test \n");
++			while (rs.next()) {
++				String StudentID = rs.getString("SName");
++				System.out.println(StudentID + "\n");
++			}
++			
++			//statement to check conditional on Dept
++			s = "select DId, DName from dept where Did = 10";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Conditional from dept test \n");
++			while (rs.next()) {
++				String DeptID = rs.getString("DName");
++				System.out.println(DeptID + "\n");
++			}
++			
++			//additional testing for course
++			s = "select Cid, title from course";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Conditional from course test \n");
++			while (rs.next()) {
++				String CourseID = rs.getString("Title");
++				System.out.println(CourseID + "\n");
++			}
++			
++			//final testing by insertion and then checking the data again to make sure it worked properly
++			s = "insert into student(sid, sname, majorid, gradyear) values (1, 'test', 10, 2016)";
++			stmt.executeUpdate(s);
++			s = "select Sid, Sname from student where gradyear = 2016 and majorid = 10";
++			rs = stmt.executeQuery(s);
++			System.out.println("Printing Conditional4 from student after update test \n");
++			while (rs.next()) {
++				String StudentName = rs.getString("SName");
++				System.out.println(StudentName + "\n");
++			}
++			
++			long totalEndTime = System.nanoTime();
++			System.out.println(String.format("Total Time elapsed: %.3f ms\n", ((float)(totalEndTime -totalStartTime))/1000000.0));
++			
++		}
++		catch(SQLException e) {
++			e.printStackTrace();
++		}
++		finally {
++			try {
++				if (conn != null)
++					conn.close();
++			}
++			catch (SQLException e) {
++				e.printStackTrace();
++			}
++		}
++	}
++}
+diff --git a/Phase 1/studentClient/simpledb/ExamplesOutput.txt b/Phase 1/studentClient/simpledb/ExamplesOutput.txt
+new file mode 100644
+index 0000000..f57f6e0
+--- /dev/null
++++ b/Phase 1/studentClient/simpledb/ExamplesOutput.txt	
+@@ -0,0 +1,107 @@
++Printing Select from student test
++
++joe
++
++amy
++
++max
++
++sue
++
++bob
++
++kim
++
++art
++
++pat
++
++lee
++
++Printing Select from dept test
++
++compsci
++
++math
++
++drama
++
++Printing Select from course test
++
++db systems
++
++compilers
++
++calculus
++
++algebra
++
++acting
++
++elocution
++
++Printing Select from section test
++
++13
++
++23
++
++33
++
++43
++
++53
++
++Printing Select from enroll test
++
++14
++
++24
++
++34
++
++44
++
++54
++
++64
++
++Printing Conditional1 from student test
++
++max
++
++Printing Conditional2 from student test
++
++joe
++
++max
++
++lee
++
++Printing Conditional3 from student test
++
++sue
++
++Printing Conditional from dept test
++
++compsci
++
++Printing Conditional from course test
++
++db systems
++
++compilers
++
++calculus
++
++algebra
++
++acting
++
++elocution
++
++Printing Conditional4 from student after update test
++
++test
++
++Total Time elapsed: 81.249 ms
+\ No newline at end of file
+diff --git a/Phase 1/test_phase1/Phase1Tests.java b/Phase 1/test_phase1/Phase1Tests.java
+deleted file mode 100644
+index 8f19257..0000000
+--- a/Phase 1/test_phase1/Phase1Tests.java	
++++ /dev/null
+@@ -1,86 +0,0 @@
+-import org.junit.Test;
+-import simpledb.buffer.*;
+-import simpledb.file.*;
+-
+-import static junit.framework.TestCase.*;
+-
+-public class Phase1Tests {
+-    @Test
+-    public void testTask1(){
+-        int size;
+-        long bef;
+-        long delta1 = 0;
+-        long delta2 = 0;
+-        System.out.println("Basic test:");
+-        for (int i = 10; i < 15; i++){
+-            size = 2 << i;
+-            BufferMgr bufferMgr = new BufferMgr(size);
+-            bef = System.currentTimeMillis();
+-            for (int j = 0; j < size; j ++){
+-                bufferMgr.pin(new Block("FakeFile", j + 1));
+-            }
+-            delta1 = System.currentTimeMillis() - bef;
+-            System.out.println("For size: " + size + "\tTime in ms to fill buffer: " + delta1);
+-        }
+-
+-        System.out.println("Advanced test:");
+-        for (int i = 10; i < 15; i++){
+-            size = 2 << i;
+-            NewBufferMgr bufferMgr = new NewBufferMgr(size);
+-            bef = System.currentTimeMillis();
+-            for (int j = 0; j < size; j ++){
+-                bufferMgr.pin(new Block("FakeFile", j + 1));
+-            }
+-            delta2 = System.currentTimeMillis() - bef;
+-            System.out.println("For size: " + size + "\tTime in ms to fill buffer: " + delta2);
+-        }
+-
+-        assertTrue(true);
+-    }
+-
+-    @Test
+-    public void testTask2(){
+-        int size;
+-        long bef;
+-        long delta1 = 0;
+-        long delta2 = 0;
+-        int step = 0;
+-        System.out.println("Basic test:");
+-        for (int i = 10; i < 15; i++){
+-            size = 2 << i;
+-            BufferMgr bufferMgr = new BufferMgr(size);
+-            for (int j = 0; j < size; j ++){
+-                bufferMgr.pin(new Block("FakeFile", j + 1));
+-            }
+-            bef = System.currentTimeMillis();
+-            step = size/1024;
+-            for (int k = 1; k < 1024; k++){
+-                for (int p = 0; p < 100; p++){
+-                    bufferMgr.pin(new Block("FakeFile", k*step));
+-                }
+-            }
+-            delta1 = System.currentTimeMillis() - bef;
+-            System.out.println("For size: " + size + "\tTime in ms to pin 1024 buffers 100 times each: " + delta1);
+-        }
+-
+-        System.out.println("Advanced test:");
+-        for (int i = 10; i < 15; i++){
+-            size = 2 << i;
+-            NewBufferMgr bufferMgr = new NewBufferMgr(size);
+-            for (int j = 0; j < size; j ++){
+-                bufferMgr.pin(new Block("FakeFile", j + 1));
+-            }
+-            bef = System.currentTimeMillis();
+-            step = size/1024;
+-            for (int k = 1; k < 1024; k++){
+-                for (int p = 0; p < 100; p++){
+-                    bufferMgr.pin(new Block("FakeFile", k*step));
+-                }
+-            }
+-            delta2 = System.currentTimeMillis() - bef;
+-            System.out.println("For size: " + size + "\tTime in ms to pin 1024 buffers 100 times each: " + delta2);
+-        }
+-
+-        assertTrue(true);
+-    }
+-}
+diff --git a/Phase 1/test_project2/CreateAndTestTables.java b/Phase 1/test_project2/CreateAndTestTables.java
+new file mode 100644
+index 0000000..c0573bc
+--- /dev/null
++++ b/Phase 1/test_project2/CreateAndTestTables.java	
+@@ -0,0 +1 @@
++/******************************************************************/import java.sql.Connection;import java.sql.Driver;import java.sql.SQLException;import java.sql.Statement;import java.util.HashMap;import java.util.Random;import simpledb.remote.SimpleDriver;public class CreateAndTestTables { final static int maxSize=10000; /**  * @param args  */ public static void main(String[] args) {  Connection conn=null;  Driver d = new SimpleDriver();  String host = "localhost"; //you may change it if your SimpleDB server is running on a different machine  String url = "jdbc:simpledb://" + host;  String qry="Create table test1" +  "( a1 int," +  "  a2 int"+  ")";  Random rand=null;  Statement s=null;  Long start;  HashMap<Integer, Long> time_map= new HashMap<Integer, Long>();  HashMap<Integer, Long> time_map_ins= new HashMap<Integer, Long>();  HashMap<Integer, Long> time_map_del= new HashMap<Integer, Long>();  try {   System.out.println("Started to create tables");   conn = d.connect(url, null);   s=conn.createStatement();   s.executeUpdate("Create table test1" +     "( a1 int," +     "  a2 int"+   ")");   s.executeUpdate("Create table test2" +     "( a1 int," +     "  a2 int"+   ")");   s.executeUpdate("Create table test3" +     "( a1 int," +     "  a2 int"+   ")");   s.executeUpdate("Create table test4" +     "( a1 int," +     "  a2 int"+   ")");   s.executeUpdate("Create table test5" +     "( a1 int," +     "  a2 int"+   ")");   System.out.println("Started to create indexes");   s.executeUpdate("create sh index idx1 on test1 (a1)");   s.executeUpdate("create ex index idx2 on test2 (a1)");   s.executeUpdate("create bt index idx3 on test3 (a1)");   System.out.println("Indexes created, inserting values");   for(int i=1;i<6;i++)   {    start = System.nanoTime();    if(i!=5)    {     rand=new Random(1);// ensure every table gets the same data     for(int j=0;j<maxSize;j++)     {      s.executeUpdate("insert into test"+i+" (a1,a2) values("+rand.nextInt(1000)+","+rand.nextInt(1000)+ ")");     }    }    else//case where i=5    {     for(int j=0;j<maxSize/2;j++)// insert 10000 records into test5     {      s.executeUpdate("insert into test"+i+" (a1,a2) values("+j+","+j+ ")");     }    }    time_map.put(i, System.nanoTime() - start);   }   System.out.println("Insertions done, now selecting");   for(int i=1;i<6;i++)   {    start = System.nanoTime();    rand=new Random(1);// ensure every table gets the same data    for(int j=0;j<100;j++)    {     s.executeQuery("select a1 from test"+i+" where a1 = "+rand.nextInt(1000));    }    time_map_ins.put(i, System.nanoTime() - start);   }   System.out.println("Selection done, now deleting");   for(int i=1;i<6;i++)   {    start = System.nanoTime();    rand=new Random(1);// ensure every table gets the same data    for(int j=0;j<100;j++)    {     s.executeUpdate("delete from test"+i+" where a1 = "+rand.nextInt(1000));    }    time_map_del.put(i, System.nanoTime() - start);   }   conn.close();   for (int k = 1; k < 6;k++){    switch (k){     case 1:      System.out.println("Using static hash index:");      break;     case 2:      System.out.println("Using extensible hash index:");      break;     case 3:      System.out.println("Using b-tree index:");      break;     default:      System.out.println("No index:");    }    System.out.println("For table " + k + " the addition of " + maxSize + " took: " + time_map.get(k) + " nanoseconds");    System.out.println("For table " + k + " the selection of " + 100 + " took: " + time_map_ins.get(k) + " nanoseconds");    System.out.println("For table " + k + " the deletion of " + 100 + " took: " + time_map_del.get(k) + " nanoseconds");   }  } catch (SQLException e) {   e.printStackTrace();  }finally  {   try {    conn.close();   } catch (SQLException e) {    e.printStackTrace();   }  } }}
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index f911dec..b2319dd 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,12 @@
+ # Databases2
++
++Team: Pedro De Vasconcellos Oporto and Katherine Thompson
++
++Follow set up instructions provided for class (we used the IntelliJ instructions)
++When you start you must run StartUp, then run CreateStudentDB, finally Examples (in studentClient->simpleDB) can be run for some testing based on the tables created in CreateStudentDB for Task 1. These outputs can be found in ExamplesOutput.
++You will need to StartUp each time you want to run, and will need to create the table with CreateStudentDB. If you run and there is a BufferUnderflowException you will need to go to your personnal User folder on your computer and clear out (delete the files in) the cs4432DB folder and then run StartUp and CreateStudentDB again.
++test_phase1 folder includes testing for this project, and a testing file that will produce testing output for our changes to simpleDB. Additionally we have provided a testing output file.
++
++In our zip you will find a zip of simpleDB with our code (within which is Examples.java which was mentioned above), design.txt, testing.txt, and bugs.txt
++
++Finally in the Phase1 folder the original README.txt for simpleDB can be found, please refer to that with any additional questions that go beyond our additions to simpleDB
+diff --git a/simpledb2.10.iml b/simpledb2.10.iml
+index 6b36262..66caec6 100644
+--- a/simpledb2.10.iml
++++ b/simpledb2.10.iml
+@@ -6,7 +6,7 @@
+     <content url="file://$MODULE_DIR$/Phase 1">
+       <sourceFolder url="file://$MODULE_DIR$/Phase 1/src" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/Phase 1/studentClient/simpledb" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/Phase 1/test_phase1" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/Phase 1/test_project2" isTestSource="true" />
+     </content>
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="inheritedJdk" />

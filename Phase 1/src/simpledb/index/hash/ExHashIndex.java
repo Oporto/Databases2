@@ -1,7 +1,6 @@
 package simpledb.index.hash;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 //TODO I think we will end up needing to increase the buffer size
 
@@ -159,7 +158,7 @@ public class ExHashIndex implements Index
 				//is bckt boutta be full
 				if (idxBcktTableScan.getInt(BCKT_TUPLES) >= NUM_BCKT_TUPLES){
 					//now the hard stuff, need to reorder these bad boys
-					reorderBcktRecords(dataval, datarid);
+					reorderBcktRecords();
 					return;
 				} else {
 					//easy one juse insert into a bucket that already exists
@@ -176,7 +175,7 @@ public class ExHashIndex implements Index
 	
 	//reorganizing all the bucket values, big oof
 	//need to increase dir size and put all the values at their new bit values
-	public void reorderBcktRecords(Constant val, RID rid){
+	public void reorderBcktRecords(){
 		int oldBcktBits = idxBcktTableScan.getInt(BCKT_BITS);
 		
 		//does the global need to be incremented? increment current and set to global
@@ -186,6 +185,7 @@ public class ExHashIndex implements Index
 		}
 		
 		//i think we need this to track the displaced bois
+		HashMap<Constant, RID> idkMap = new HashMap<Constant, RID>();
 		List<Constant> idkList = new ArrayList<Constant>();
 		
 		idxBcktTableScan.beforeFirst();
@@ -196,13 +196,14 @@ public class ExHashIndex implements Index
 			
 			//open current bucket file, this one is full and we gonna have to do some work on it
 			String fname = idxBcktTableScan.getString(BCKT_FILENAME);
-			TableScan tblscan = getTableFromFName(fname);
-			tblscan.beforeFirst();
+			tablescan = getTableFromFName(fname);
+			tablescan.beforeFirst();
 			
 			//lets go through all the records in the file
-			while(tblscan.next()){
-				Constant key = tblscan.getVal("dataval");
-				int bckt = key.hashCode()%HASH_MOD_VAL;
+			while(tablescan.next())
+			{
+				Constant key = tablescan.getVal("dataval");
+				int bckt = key.hashCode() % HASH_MOD_VAL;
 				
 				//masked values for the record and  and also for new bckt bits
 				int chckbcktnummask = idxBcktTableScan.getInt(BCKT_NUM) & getMaskValue(idxBcktTableScan.getInt(BCKT_BITS));
@@ -210,34 +211,34 @@ public class ExHashIndex implements Index
 				
 				//ok so now we increased the bit value but what if a record should be hashed in here
 				//we gotta remove that ish and resort it, so lets add it to our list for now
-				if (bcktnummask != chckbcktnummask){
+				if (bcktnummask != chckbcktnummask)
+				{
+					idkMap.put(key, getDataRid());
 					idkList.add(key);
-					//idxBcktTableScan.setInt(BCKT_TUPLES, idxBcktTableScan.getInt());
-				
-				/*
-				int b = prevBucketBits;
-				int n = indexBucketTableScan.getInt(BUCKET_NUM);
-				int newN = (int) (n + Math.pow(2, b));
-				*/
+					idxBcktTableScan.setInt(BCKT_TUPLES, idxBcktTableScan.getInt(BCKT_TUPLES) - 1);
+					tablescan.delete();
 				}
-		}
+			}
 		}
 		
-	// TODO finish this function
+		for (Constant k : idkList){
+			insert(k, idkMap.get(k));
+		}
+		tablescan.close();
 	}
 	
 	//inserting the record into a bucket that already exists, also increments tuples in bucket
 	public void insertExistingIdxBckt(Constant val, RID rid){
 		idxBcktTableScan.setInt(BCKT_TUPLES, idxBcktTableScan.getInt(BCKT_TUPLES) + 1);
-		TableScan tblscan = getTableFromFName(idxBcktTableScan.getString(BCKT_FILENAME));
+		tablescan = getTableFromFName(idxBcktTableScan.getString(BCKT_FILENAME));
 		
 		//actually inserting the new value
-		tblscan.beforeFirst();
-		tblscan.insert();
-		tblscan.setInt("block", rid.blockNumber());
-		tblscan.setInt("id", rid.id());
-		tblscan.setVal("dataval", val);
-		tblscan.close();
+		tablescan.beforeFirst();
+		tablescan.insert();
+		tablescan.setInt("block", rid.blockNumber());
+		tablescan.setInt("id", rid.id());
+		tablescan.setVal("dataval", val);
+		tablescan.close();
 	}
 	
 	//new value and new bucket oh boy!
@@ -255,14 +256,15 @@ public class ExHashIndex implements Index
 			setGblBits();
 		}
 		
-		TableScan tblscn = getTableFromFName(idxBcktTableScan.getString(BCKT_FILENAME));
-		//and finally actually insert the record
-		tblscn.beforeFirst();
-		tblscn.insert();
-		tblscn.setInt("block", rid.blockNumber());
-		tblscn.setInt("id", rid.id());
-		tblscn.setVal("dataval", val);
-		tblscn.close();
+		tablescan = getTableFromFName(idxBcktTableScan.getString(BCKT_FILENAME));
+		
+		//actually inserting the new value
+		tablescan.beforeFirst();
+		tablescan.insert();
+		tablescan.setInt("block", rid.blockNumber());
+		tablescan.setInt("id", rid.id());
+		tablescan.setVal("dataval", val);
+		tablescan.close();
 		//end by incrementing
 		cBuckets++;
 	}

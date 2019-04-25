@@ -107,8 +107,10 @@ public class Parser {
          return createTable();
       else if (lex.matchKeyword("view"))
          return createView();
-      else
+      else if (lex.matchKeyword("sh") || lex.matchKeyword("bt") || lex.matchKeyword("eh"))
          return createIndex();
+      else
+         return null;
    }
    
 // Method for parsing delete commands
@@ -234,7 +236,7 @@ public class Parser {
 //  Method for parsing create index commands
    
    public CreateIndexData createIndex() {
-      lex.eatKeyword("create");
+      System.out.println("Starting to create index");
       String idxtype = lex.eatId();
       lex.eatKeyword("index");
       String idxname = lex.eatId();

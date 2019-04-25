@@ -3,7 +3,7 @@ package simpledb.metadata;
 import static java.sql.Types.INTEGER;
 import static simpledb.file.Page.BLOCK_SIZE;
 
-import simpledb.index.hash.ExtIndex.ExtIndex;
+import simpledb.index.hash.ExHashIndex;
 import simpledb.server.SimpleDB;
 import simpledb.tx.Transaction;
 import simpledb.record.*;
@@ -59,7 +59,7 @@ public class IndexInfo {
 	      case "bt":
 		      return new BTreeIndex(idxname, sch, tx);
 	      case "eh":
-		      return new ExtIndex(idxname, sch, tx);
+		      return new ExHashIndex(idxname, sch, tx);
 	      default:
 	      	//CS4432: default is a static hash index, though if it gets to this it is an error
 		      System.out.println("Something is wrong with the type");

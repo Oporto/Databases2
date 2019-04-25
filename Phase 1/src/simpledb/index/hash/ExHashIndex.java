@@ -96,14 +96,12 @@ public class ExHashIndex implements Index
 		this.searchKey = searchkey;
 		//TODO check to make sure this is doing the hash thangs correctly
 		cBucketsNum = searchkey.hashCode()%HASH_MOD_VAL;
-	
 	}
 	
 	@Override
 	public boolean next()
 	{
 		while (tablescan.next()){
-			//TODO is this the correct field name?
 			if( tablescan.getVal("dataval").equals(searchKey)){
 				return true;
 			}
@@ -177,7 +175,33 @@ public class ExHashIndex implements Index
 	}
 	
 	//reorganizing all the bucket values, big oof
+	//need to increase dir size and put all the values at their new bit values
 	public void reorderBcktRecords(Constant val, RID rid){
+		int oldBcktBits = idxBcktTableScan.getInt(BCKT_BITS);
+		//bucket bits greater, so need to increment
+		idxBcktTableScan.setInt(BCKT_BITS, idxBcktTableScan.getInt(BCKT_BITS)+1);
+		
+		//does the global need to be incremented? increment current and set to global
+		if (idxBcktTableScan.getInt(BCKT_BITS) > cBits){
+			cBits++;
+			setGblBits();
+		}
+		//open current bucket file, this one is full and we gonna have to do some work on it
+		String fname = idxBcktTableScan.getString(BCKT_FILENAME);
+		TableScan tblscan = getTableFromFName(fname);
+		tblscan.beforeFirst();
+		
+		//i think we need this to track the displaced bois
+		List<Constant> idkList = new ArrayList<Constant>();
+		
+		//lets go through all the records in the file
+		while(tblscan.next()){
+			Constant key = tblscan.getVal("dataval");
+			int bckt = key.hashCode()%HASH_MOD_VAL;
+			
+			//values were
+		}
+		
 	// TODO finish this function
 	}
 	

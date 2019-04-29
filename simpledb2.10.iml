@@ -3,10 +3,10 @@
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/Phase 1/bin" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/Phase 1">
-      <sourceFolder url="file://$MODULE_DIR$/Phase 1/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Phase 1/studentClient/simpledb" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Phase 1/test_project2" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/Project2">
+      <sourceFolder url="file://$MODULE_DIR$/Project2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project2/studentClient/simpledb" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project2/test_project2" isTestSource="true" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
